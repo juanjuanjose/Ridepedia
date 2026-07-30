@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="1600" y1="0" x2="0" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1D4ED8" stop-opacity="0.45"/>
+      <stop offset="0.45" stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#450A0A"/>
+    </linearGradient>
+    <linearGradient id="bike" x1="292" y1="290" x2="1252" y2="640" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FEF2F2"/>
+      <stop offset="1" stop-color="#EF4444"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" rx="40" fill="url(#bg)"/>
+  <circle cx="380" cy="648" r="130" stroke="#F8FAFC" stroke-opacity="0.3" stroke-width="18"/>
+  <circle cx="1136" cy="648" r="130" stroke="#F8FAFC" stroke-opacity="0.3" stroke-width="18"/>
+  <path d="M381 648H546L700 454H915L1018 548H1140" stroke="url(#bike)" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M738 454L880 346H1068" stroke="#FCA5A5" stroke-width="22" stroke-linecap="round"/>
+  <path d="M566 648L644 502" stroke="#E2E8F0" stroke-opacity="0.8" stroke-width="18" stroke-linecap="round"/>
+  <text x="122" y="142" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="70" font-weight="700">Ducati Streetfighter V4 S</text>
+  <text x="122" y="218" fill="#CBD5E1" font-family="Inter, Arial, sans-serif" font-size="30">Local editorial artwork used before remote media fallback.</text>
+</svg>
