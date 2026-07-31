@@ -24,7 +24,10 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: var(--ride-cream);
+  background:
+    radial-gradient(circle at top, rgba(157, 34, 53, 0.12), transparent 28%),
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.85), transparent 32%),
+    linear-gradient(180deg, #f7f4ef 0%, #f5f3ef 48%, #f2ede7 100%);
   color: var(--ride-copy);
 }
 
@@ -74,6 +77,82 @@ textarea {
   content: '';
   opacity: 0.3;
   pointer-events: none;
+}
+
+.page-ambient {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(18px);
+  opacity: 0.95;
+}
+
+.page-ambient::before,
+.page-ambient::after {
+  position: absolute;
+  inset: 0;
+  content: '';
+}
+
+.page-ambient-top {
+  top: 5rem;
+  left: -8rem;
+  height: 26rem;
+  width: 26rem;
+}
+
+.page-ambient-top::before {
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(157, 34, 53, 0.16) 0%, rgba(157, 34, 53, 0.04) 48%, transparent 72%);
+}
+
+.page-ambient-top::after {
+  top: 3.5rem;
+  left: 4rem;
+  height: 14rem;
+  width: 18rem;
+  border-radius: 999px;
+  border: 1px solid rgba(157, 34, 53, 0.08);
+  transform: rotate(-18deg);
+}
+
+.page-ambient-side {
+  top: 28rem;
+  right: -10rem;
+  height: 32rem;
+  width: 32rem;
+}
+
+.page-ambient-side::before {
+  border-radius: 46% 54% 58% 42% / 42% 41% 59% 58%;
+  background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.08) 58%, transparent 74%);
+}
+
+.page-ambient-side::after {
+  top: 4rem;
+  left: 2rem;
+  height: 18rem;
+  width: 18rem;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(9, 9, 9, 0.05), transparent 68%);
+}
+
+.page-ambient-bottom {
+  bottom: 7rem;
+  left: 18%;
+  height: 24rem;
+  width: 40rem;
+}
+
+.page-ambient-bottom::before {
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(157, 34, 53, 0.08), rgba(255, 255, 255, 0.02));
+}
+
+.page-ambient-bottom::after {
+  inset: 2rem;
+  border-radius: 999px;
+  border: 1px solid rgba(9, 9, 9, 0.06);
 }
 
 .editorial-eyebrow {

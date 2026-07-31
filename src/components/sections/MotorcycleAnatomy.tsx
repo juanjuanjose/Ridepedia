@@ -5,6 +5,9 @@ import { Reveal } from '../common/Reveal'
 
 const StreetfighterStage = lazy(() => import('../3d/StreetfighterStage'))
 const DUCATI_NAKED_MODEL_URL = '/motorcycles/2024-ducati-streetfighter-v4-s/source/2024%20Ducati%20StreetFighter%20V4%20S.glb'
+const BMW_S1000RR_MODEL_URL = '/motorcycles/bmw-s1000rr-2019/source/8788%207%20%2080884.glb'
+const KTM_450_MODEL_URL = '/motorcycles/ktm_450_exc.glb'
+const FREE_HONDA_MODEL_URL = '/motorcycles/free_honda_crf_450.glb'
 
 const motorcycleCategories = [
   {
@@ -22,12 +25,13 @@ const motorcycleCategories = [
       { label: 'Peso', value: '197.5 kg' },
     ],
     hasModel: true,
+    modelUrl: DUCATI_NAKED_MODEL_URL,
   },
   {
     label: 'Deportivas',
     slug: 'sport',
     description: 'Máximo rendimiento en carretera y circuito.',
-    model: 'Ducati Panigale V4',
+    model: 'BMW S1000RR',
     summary:
       'Las deportivas nacen para velocidad, estabilidad en altas revoluciones y precisión en curva. Todo en ellas está pensado para exprimir rendimiento.',
     strengths: ['Aerodinámica agresiva', 'Respuesta inmediata', 'Gran velocidad punta'],
@@ -37,7 +41,8 @@ const motorcycleCategories = [
       { label: 'Torque', value: '120 Nm' },
       { label: 'Peso', value: '191 kg' },
     ],
-    hasModel: false,
+    hasModel: true,
+    modelUrl: BMW_S1000RR_MODEL_URL,
   },
   {
     label: 'Adventure',
@@ -75,7 +80,7 @@ const motorcycleCategories = [
     label: 'Enduro',
     slug: 'enduro',
     description: 'Pensadas para uso fuera del asfalto y terrenos exigentes.',
-    model: 'KTM 300 EXC',
+    model: 'KTM 450',
     summary:
       'Las enduro están hechas para terreno roto, control físico y respuesta inmediata en contextos donde el asfalto deja de existir.',
     strengths: ['Ligereza', 'Suspensión off-road', 'Tracción en terreno técnico'],
@@ -85,13 +90,14 @@ const motorcycleCategories = [
       { label: 'Suspensión', value: 'Larga' },
       { label: 'Terreno', value: 'Extremo' },
     ],
-    hasModel: false,
+    hasModel: true,
+    modelUrl: KTM_450_MODEL_URL,
   },
   {
     label: 'Motocross',
     slug: 'motocross',
     description: 'Exclusivas para circuitos de tierra y saltos.',
-    model: 'Yamaha YZ450F',
+    model: 'Free Honda',
     summary:
       'Motocross significa reacción instantánea, chasis compacto y resistencia para saltos, apoyos fuertes y tierra constante.',
     strengths: ['Explosión en baja', 'Geometría compacta', 'Preparación para saltos'],
@@ -101,7 +107,8 @@ const motorcycleCategories = [
       { label: 'Peso', value: 'Ligero' },
       { label: 'Uso', value: 'Circuito' },
     ],
-    hasModel: false,
+    hasModel: true,
+    modelUrl: FREE_HONDA_MODEL_URL,
   },
   {
     label: 'Supermotard',
@@ -145,7 +152,8 @@ export function MotorcycleAnatomy({ motorcycle: _motorcycle }: MotorcycleAnatomy
   const [isInteractive, setIsInteractive] = useState(false)
   const [selectedCategorySlug, setSelectedCategorySlug] = useState('naked')
   const selectedCategory = motorcycleCategories.find((category) => category.slug === selectedCategorySlug) ?? motorcycleCategories[0]
-  const showDucatiModel = selectedCategory.slug === 'naked'
+  const activeModelUrl = 'modelUrl' in selectedCategory ? selectedCategory.modelUrl : null
+  const showModel = selectedCategory.hasModel && activeModelUrl !== null
 
   return (
     <>
@@ -169,7 +177,7 @@ export function MotorcycleAnatomy({ motorcycle: _motorcycle }: MotorcycleAnatomy
                   Elegí una categoría y el modelo se convierte en la pieza central de la sección. El panel descriptivo vive aparte para que la escena respire.
                 </p>
                 <p className="mt-3 text-xs uppercase tracking-[0.28em] text-white/42">
-                  Demo actual: Ducati Streetfighter V4 disponible en Naked
+                  Modelos activos en Naked, Deportivas, Enduro y Motocross
                 </p>
               </div>
             </div>
@@ -195,7 +203,7 @@ export function MotorcycleAnatomy({ motorcycle: _motorcycle }: MotorcycleAnatomy
               </div>
 
               <div className="overflow-hidden rounded-[34px] border border-white/10 bg-[linear-gradient(180deg,rgba(10,10,10,0.66),rgba(10,10,10,0.52)),url('/motorcycles/hangar.webp')] bg-cover bg-center p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] lg:p-5">
-                {showDucatiModel ? (
+                {showModel ? (
                   <div
                     className="relative h-full min-h-[34rem] overflow-hidden rounded-[30px] border border-white/8 bg-[rgba(2,6,23,0.18)] lg:min-h-[44rem]"
                     onMouseEnter={() => setIsInteractive(true)}
@@ -209,14 +217,14 @@ export function MotorcycleAnatomy({ motorcycle: _motorcycle }: MotorcycleAnatomy
                       }
                     >
                       <StreetfighterStage
-                        modelUrl={DUCATI_NAKED_MODEL_URL}
+                        modelUrl={activeModelUrl}
                         interactive={isInteractive}
-                        resetSignal={0}
+                        resetSignal={selectedCategory.slug}
                       />
                     </Suspense>
 
                   <div className="pointer-events-none absolute bottom-4 left-4 rounded-full border border-white/10 bg-slate-950/70 px-4 py-2 text-xs uppercase tracking-[0.35em] text-white/72">
-                    {isInteractive ? '360 activo + zoom' : 'Pasá el cursor para girar y acercar'}
+                    {isInteractive ? '360 activo' : 'Pasá el cursor para girar'}
                   </div>
 
                   <div className="pointer-events-none absolute left-5 top-5 rounded-[22px] border border-white/10 bg-black/30 px-4 py-3 backdrop-blur-md">
@@ -276,7 +284,7 @@ export function MotorcycleAnatomy({ motorcycle: _motorcycle }: MotorcycleAnatomy
 
             <div className="mt-4 rounded-[24px] border border-dashed border-black/10 px-5 py-5 text-sm leading-7 text-black/52">
               {selectedCategory.hasModel
-                ? 'Demo activa: Ducati Streetfighter V4 en vista 360 con zoom para revisar detalles.'
+                ? `Demo activa: ${selectedCategory.model} en vista 360 sin reinicios por hover ni interferencia del scroll.`
                 : 'Cuando sumes el siguiente `.glb`, solo cambiará el modelo mientras este panel mantiene su lectura.'}
             </div>
           </aside>

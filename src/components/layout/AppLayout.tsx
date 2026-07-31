@@ -1,22 +1,49 @@
 import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
 
 export function AppLayout() {
+  const [isHeaderVisible, setIsHeaderVisible] = useState(true)
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+      const isScrollingUp = currentScrollY < lastScrollY
+
+      setIsHeaderVisible(isScrollingUp || currentScrollY < 24)
+      lastScrollY = currentScrollY
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
     <div className="relative min-h-screen overflow-hidden bg-[var(--ride-cream)] text-[var(--ride-ink)]">
+      <div className="page-ambient page-ambient-top" />
+      <div className="page-ambient page-ambient-side" />
+      <div className="page-ambient page-ambient-bottom" />
       <div className="noise-overlay absolute inset-0 opacity-70" />
 
-      <header className="sticky top-0 z-40 border-b border-black/6 bg-[rgba(245,243,239,0.82)] backdrop-blur-xl">
+      <motion.header
+        initial={false}
+        animate={{ y: isHeaderVisible ? 0 : '-120%' }}
+        transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
+        className="fixed inset-x-0 top-0 z-40 border-b border-black/6 bg-[rgba(245,243,239,0.74)] backdrop-blur-xl"
+      >
         <div className="mx-auto grid w-[min(1680px,calc(100%-1.5rem))] grid-cols-[auto_1fr_auto] items-center gap-5 py-3 md:gap-8">
           <NavLink to="/" className="flex items-center">
             <img
               src="/Logos/Ridepedia isotipo.png"
               alt="Ridepedia"
-              className="h-[6.6rem] w-[6.6rem] object-contain md:h-[8.2rem] md:w-[8.2rem]"
+              className="h-[4.4rem] w-[4.4rem] object-contain md:h-[5.5rem] md:w-[5.5rem]"
             />
           </NavLink>
 
-          <div className="mx-auto flex w-full max-w-3xl items-center rounded-full border border-black/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(250,248,245,0.96))] px-7 py-4 shadow-[0_24px_70px_rgba(15,23,42,0.08)] ring-1 ring-white/60">
+          <div className="mx-auto flex w-full max-w-3xl items-center rounded-full border border-black/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(250,248,245,0.96))] px-6 py-3 shadow-[0_18px_48px_rgba(15,23,42,0.07)] ring-1 ring-white/60">
             <input
               type="text"
               placeholder="Buscar motos, marcas, estilos o categorías"
@@ -27,15 +54,15 @@ export function AppLayout() {
           <NavLink
             to="/catalog"
             className={({ isActive }) =>
-              `rounded-full px-7 py-3.5 text-sm transition ${isActive ? 'bg-[#9D2235] text-white shadow-[0_14px_28px_rgba(157,34,53,0.24)]' : 'bg-white text-black shadow-[0_16px_40px_rgba(15,23,42,0.06)] hover:bg-[#9D2235] hover:text-white'}`
+              `rounded-full px-6 py-3 text-sm transition ${isActive ? 'bg-[#9D2235] text-white shadow-[0_14px_28px_rgba(157,34,53,0.24)]' : 'bg-white text-black shadow-[0_16px_40px_rgba(15,23,42,0.06)] hover:bg-[#9D2235] hover:text-white'}`
             }
           >
             Catálogo
           </NavLink>
         </div>
-      </header>
+      </motion.header>
 
-      <main className="relative z-10 pb-24 pt-8">
+      <main className="relative z-10 pb-24 pt-28 md:pt-32">
         <Outlet />
       </main>
 

@@ -8,7 +8,7 @@ import { Box3, Group, MathUtils, PerspectiveCamera, Vector3 } from 'three'
 interface StreetfighterStageProps {
   modelUrl: string
   interactive: boolean
-  resetSignal: number
+  resetSignal: number | string
 }
 
 function FramedModel({
@@ -20,7 +20,7 @@ function FramedModel({
   modelUrl: string
   controlsRef: RefObject<OrbitControlsImpl>
   interactive: boolean
-  resetSignal: number
+  resetSignal: number | string
 }) {
   const gltf = useGLTF(modelUrl)
   const groupRef = useRef<Group>(null)
@@ -45,8 +45,9 @@ function FramedModel({
 
     const perspectiveCamera = camera as PerspectiveCamera
     const fov = MathUtils.degToRad(perspectiveCamera.fov)
+    const widestHorizontalSpan = Math.max(dimensions.x, dimensions.z)
     const fitHeightDistance = dimensions.y / (2 * Math.tan(fov / 2))
-    const fitWidthDistance = dimensions.x / (2 * Math.tan(Math.atan(Math.tan(fov / 2) * perspectiveCamera.aspect)))
+    const fitWidthDistance = widestHorizontalSpan / (2 * Math.tan(Math.atan(Math.tan(fov / 2) * perspectiveCamera.aspect)))
     const distance = Math.max(fitHeightDistance, fitWidthDistance) * 1.03 + dimensions.z * 0.46
     const verticalBias = dimensions.y * 0.025
 
@@ -85,7 +86,7 @@ function FramedModel({
     controls.reset()
     controls.enabled = interactive
     controls.update()
-  }, [controlsRef, interactive, resetSignal])
+  }, [controlsRef, resetSignal])
 
   useEffect(() => {
     gltf.scene.traverse((child) => {
@@ -136,9 +137,19 @@ export default function StreetfighterStage({ modelUrl, interactive, resetSignal 
       </Suspense>
 
       <ContactShadows position={[0, -1.3, 0]} opacity={0.52} scale={13} blur={2.2} far={4.2} resolution={512} />
-      <OrbitControls ref={controlsRef} enabled={interactive} enableDamping dampingFactor={0.08} rotateSpeed={0.82} zoomSpeed={0.96} />
+      <OrbitControls
+        ref={controlsRef}
+        enabled={interactive}
+        enableDamping
+        dampingFactor={0.08}
+        rotateSpeed={0.82}
+        enableZoom={false}
+      />
     </Canvas>
   )
 }
 
 useGLTF.preload('/motorcycles/2024-ducati-streetfighter-v4-s/source/2024%20Ducati%20StreetFighter%20V4%20S.glb')
+useGLTF.preload('/motorcycles/bmw-s1000rr-2019/source/8788%207%20%2080884.glb')
+useGLTF.preload('/motorcycles/ktm_450_exc.glb')
+useGLTF.preload('/motorcycles/free_honda_crf_450.glb')
