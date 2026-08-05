@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 
 import { motorcycles } from '../../data/motorcycles'
+import { resolveAssetPath } from '../../utils/asset-path'
 
 const heroMotorcycle = motorcycles[0]
 
@@ -54,7 +55,7 @@ export function HeroSection() {
 
         <div className="relative flex min-h-[34rem] items-center justify-center overflow-hidden rounded-[34px] bg-[radial-gradient(circle_at_top,rgba(157,34,53,0.16),transparent_34%),#111111] lg:min-h-full">
           <img
-            src="/Hero images/h2r.jpg"
+            src={resolveAssetPath('/Hero images/h2r.jpg')}
             alt="Kawasaki Ninja H2R"
             className="relative z-10 h-full w-full object-contain p-0 lg:p-1"
           />

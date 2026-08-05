@@ -11,6 +11,7 @@
     "generate:assets": "node scripts/generate-motorcycle-glbs.mjs"
   },
   "dependencies": {
+    "@google/model-viewer": "^4.1.0",
     "@react-three/drei": "^9.122.0",
     "@react-three/fiber": "^8.18.0",
     "clsx": "^2.1.1",
@@ -21,7 +22,7 @@
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.30.4",
     "tailwind-merge": "^3.6.0",
-    "three": "^0.185.1"
+    "three": "^0.183.0"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.12",

@@ -2,6 +2,8 @@ import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
 
+import { resolveAssetPath } from '../../utils/asset-path'
+
 export function AppLayout() {
   const [isHeaderVisible, setIsHeaderVisible] = useState(true)
 
@@ -37,7 +39,7 @@ export function AppLayout() {
         <div className="mx-auto grid w-[min(1680px,calc(100%-1.5rem))] grid-cols-[auto_1fr_auto] items-center gap-5 py-3 md:gap-8">
           <NavLink to="/" className="flex items-center">
             <img
-              src="/Logos/Ridepedia isotipo.png"
+              src={resolveAssetPath('/Logos/Ridepedia isotipo.png')}
               alt="Ridepedia"
               className="h-[4.4rem] w-[4.4rem] object-contain md:h-[5.5rem] md:w-[5.5rem]"
             />
@@ -70,7 +72,7 @@ export function AppLayout() {
         <div className="section-shell flex flex-col gap-5 py-10 text-sm text-black/60 md:flex-row md:items-center md:justify-between">
           <div className="flex items-center gap-4">
             <img
-              src="/Logos/Ridepedia isotipo.png"
+              src={resolveAssetPath('/Logos/Ridepedia isotipo.png')}
               alt="Ridepedia"
               className="h-12 w-12 rounded-2xl object-cover"
             />
@@ -80,13 +82,12 @@ export function AppLayout() {
             </div>
           </div>
 
-          <motion.a
-            href="/catalog"
-            whileHover={{ y: -2 }}
-            className="inline-flex items-center justify-center rounded-full bg-[#9D2235] px-5 py-3 text-white shadow-[0_12px_24px_rgba(157,34,53,0.22)]"
+          <NavLink
+            to="/catalog"
+            className="inline-flex items-center justify-center rounded-full bg-[#9D2235] px-5 py-3 text-white shadow-[0_12px_24px_rgba(157,34,53,0.22)] transition hover:-translate-y-0.5"
           >
             Explorar catálogo
-          </motion.a>
+          </NavLink>
         </div>
       </footer>
     </div>

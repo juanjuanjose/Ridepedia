@@ -1,5 +1,7 @@
 import type { Motorcycle } from '../types/motorcycle'
 
+import { resolveAssetPath } from '../utils/asset-path'
+
 export const motorcycles: Motorcycle[] = [
   {
     id: 'ducati-streetfighter-v4',
@@ -29,12 +31,12 @@ export const motorcycles: Motorcycle[] = [
       'The single-sided swingarm leaves the rear wheel exposed as a design statement.',
     ],
     media: {
-      localImage: '/media/motorcycles/ducati-streetfighter-v4.svg',
+      localImage: resolveAssetPath('/media/motorcycles/ducati-streetfighter-v4.svg'),
       carImagesQuery: { make: 'Ducati', model: 'Streetfighter V4', year: 2024 },
       wikimediaFileName: 'Ducati Streetfighter V4 Lamborghini.jpg',
     },
     model3d: {
-      localPath: '/motorcycles/2024-ducati-streetfighter-v4-s/source/2024%20Ducati%20StreetFighter%20V4%20S.glb',
+      localPath: resolveAssetPath('/motorcycles/2024-ducati-streetfighter-v4-s/source/2024%20Ducati%20StreetFighter%20V4%20S.glb'),
     },
   },
   {
@@ -65,7 +67,7 @@ export const motorcycles: Motorcycle[] = [
       'The beak and tank shoulders project utility without losing premium surface control.',
     ],
     media: {
-      localImage: '/media/motorcycles/bmw-r1300gs.svg',
+      localImage: resolveAssetPath('/media/motorcycles/bmw-r1300gs.svg'),
       carImagesQuery: { make: 'BMW', model: 'R 1300 GS', year: 2024 },
       wikimediaFileName: 'BMW R 1300 GS Option 719 Tramuntana (2024) on display, front left.jpg',
     },
