@@ -99,22 +99,35 @@ export function LearnBikeSection() {
   return (
     <Reveal className="mx-auto mt-24 w-[min(1440px,calc(100%-2rem))]">
       <section id="learnbike" className="px-1 py-1 md:px-2">
-        <div className="max-w-5xl">
-          <p className="editorial-eyebrow text-black/45">LearnBike</p>
-          <h2 className="mt-3 text-3xl font-semibold text-black lg:text-[3.2rem] lg:leading-[1.02]">Qué son las motos</h2>
-          <p className="mt-4 text-base leading-8 text-black/70 lg:text-lg">
-            Una moto combina movilidad, técnica y personalidad. Cambia mucho según su categoría: algunas buscan velocidad,
-            otras control fuera del asfalto, y otras equilibrio entre uso diario y sensaciones fuertes.
-          </p>
+        <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-4xl">
+            <p className="editorial-eyebrow text-black/45">LearnBike / experiencia 3D</p>
+            <h2 className="mt-3 text-3xl font-semibold text-black lg:text-[3.2rem] lg:leading-[1.02]">
+              El 3D se mantiene visible porque le da identidad al portal y explica motos de una forma más rica.
+            </h2>
+            <p className="mt-4 text-base leading-8 text-black/70 lg:text-lg">
+              LearnBike suma una capa premium de exploración y anticipa cómo Ridepedia puede contar diferencias entre motos más allá del texto y las fichas.
+              No reemplaza al catálogo: lo complementa y vuelve más memorable la entrada al producto.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap gap-2 lg:max-w-sm lg:justify-end">
+            <span className="rounded-full border border-[#9d2235]/18 bg-white px-4 py-2 text-[0.72rem] uppercase tracking-[0.24em] text-[#9d2235]">
+              Punto estratégico
+            </span>
+            <span className="rounded-full border border-black/10 bg-white/80 px-4 py-2 text-[0.72rem] uppercase tracking-[0.24em] text-black/58">
+              Refuerza el futuro comparador
+            </span>
+          </div>
         </div>
 
         <div className="mt-10 grid gap-5 xl:grid-cols-[1.72fr_1.08fr] xl:items-stretch 2xl:grid-cols-[1.8fr_1fr]">
           <div className="overflow-hidden rounded-[36px] border border-black/8 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.14),transparent_42%),linear-gradient(180deg,#111827,#020617)] p-5 shadow-[0_34px_110px_rgba(15,23,42,0.2)] md:p-7">
             <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-4">
-              <div>
-                <p className="text-xs uppercase tracking-[0.28em] text-white/42">Apartado 3D</p>
-                <h3 className="mt-2 text-2xl font-semibold text-white md:text-3xl">Explorá la categoría en 3D</h3>
-              </div>
+                <div>
+                  <p className="text-xs uppercase tracking-[0.28em] text-white/42">Visor interactivo</p>
+                  <h3 className="mt-2 text-2xl font-semibold text-white md:text-3xl">Explorá categorías de motos en 3D</h3>
+                </div>
               <div
                 className="rounded-full border px-4 py-2 text-xs uppercase tracking-[0.26em] text-white/80"
                 style={{ borderColor: `${selectedCategory.accent}66`, backgroundColor: `${selectedCategory.accent}22` }}
@@ -152,11 +165,10 @@ export function LearnBikeSection() {
               )}
             </div>
 
-            <p className="mt-4 text-sm leading-7 text-white/58">
-              Modelo activo: <span className="text-white/82">{selectedCategory.modelName}</span>. Podés rotarlo y acercarte para leer mejor
-              cómo cambia la arquitectura de cada tipo de moto.
-            </p>
-          </div>
+              <p className="mt-4 text-sm leading-7 text-white/58">
+                  Modelo activo: <span className="text-white/82">{selectedCategory.modelName}</span>. Esta pieza funciona como gancho visual y también como prueba de que Ridepedia puede explicar categorías de forma visual, no solo con specs.
+                </p>
+              </div>
 
           <aside className="rounded-[36px] border border-black/10 bg-[linear-gradient(180deg,rgba(255,255,255,1),rgba(247,243,237,0.98))] p-6 shadow-[0_30px_90px_rgba(15,23,42,0.12)] ring-1 ring-black/5 md:p-8 xl:p-9">
             <p className="editorial-eyebrow text-black/45">Tipo de moto</p>
@@ -192,7 +204,7 @@ export function LearnBikeSection() {
             </p>
 
             <div className="mt-4 rounded-[24px] border border-black/8 bg-white/88 p-5">
-              <p className="text-xs uppercase tracking-[0.3em] text-black/42">Características clave</p>
+              <p className="text-xs uppercase tracking-[0.3em] text-black/42">Rasgos clave</p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {selectedCategory.keyTraits.map((trait) => (
                   <span key={trait} className="rounded-full border border-black/10 px-4 py-2.5 text-sm text-black/76">
@@ -203,7 +215,7 @@ export function LearnBikeSection() {
             </div>
 
             <div className="mt-4 rounded-[24px] border border-black/8 bg-white/88 p-5">
-              <p className="text-xs uppercase tracking-[0.3em] text-black/42">Puntos fuertes</p>
+              <p className="text-xs uppercase tracking-[0.3em] text-black/42">Fortalezas</p>
               <div className="mt-4 grid gap-3">
                 {selectedCategory.strengths.map((strength) => (
                   <div key={strength} className="rounded-[18px] border border-black/8 bg-[#f8f4ef] px-4 py-3 text-sm text-black/72">

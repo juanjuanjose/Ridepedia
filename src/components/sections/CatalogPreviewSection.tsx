@@ -9,8 +9,12 @@ export function CatalogPreviewSection() {
       <section className="rounded-[36px] border border-black/8 bg-[var(--ride-paper)] p-6 shadow-[0_24px_80px_rgba(15,23,42,0.06)] md:p-8">
         <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="editorial-eyebrow text-black/45">Catálogo</p>
-            <h2 className="mt-3 text-3xl font-semibold text-black sm:text-4xl">Un índice visual limpio para seguir explorando.</h2>
+            <p className="editorial-eyebrow text-black/45">Wiki / catalog</p>
+            <h2 className="mt-3 text-3xl font-semibold text-black sm:text-4xl">La base del producto es un catálogo que organiza lo que el usuario ya puede explorar.</h2>
+            <p className="mt-4 max-w-2xl text-base leading-8 text-black/64">
+              Ridepedia no necesita fingir un ecosistema completo para ser útil hoy. El catálogo ya sirve como índice visual para entrar por marca,
+              modelo o categoría mientras el resto de los pilares madura.
+            </p>
           </div>
           <Link to="/catalog" className="inline-flex items-center rounded-full bg-[#9D2235] px-5 py-3 text-sm text-white shadow-[0_12px_24px_rgba(157,34,53,0.22)] transition hover:-translate-y-0.5">
             Ir al catálogo completo

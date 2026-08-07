@@ -4,6 +4,16 @@ import { NavLink, Outlet } from 'react-router-dom'
 
 import { resolveAssetPath } from '../../utils/asset-path'
 
+const portalLinks = [
+  { label: 'Inicio', to: '/' },
+  { label: 'Catálogo', to: '/catalog' },
+  { label: 'Mercado', to: '/marketplace' },
+  { label: 'Comparador visual', to: '/visual-comparator' },
+  { label: 'Comparador técnico', to: '/technical-comparator' },
+  { label: 'Comunidad', to: '/community' },
+  { label: 'Noticias', to: '/news' },
+]
+
 export function AppLayout() {
   const [isHeaderVisible, setIsHeaderVisible] = useState(true)
 
@@ -36,7 +46,8 @@ export function AppLayout() {
         transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
         className="fixed inset-x-0 top-0 z-40 border-b border-black/6 bg-[rgba(245,243,239,0.74)] backdrop-blur-xl"
       >
-        <div className="mx-auto grid w-[min(1680px,calc(100%-1.5rem))] grid-cols-[auto_1fr_auto] items-center gap-5 py-3 md:gap-8">
+        <div className="mx-auto w-[min(1680px,calc(100%-1.5rem))] py-3">
+          <div className="grid grid-cols-[auto_1fr_auto] items-center gap-5 md:gap-8">
           <NavLink to="/" className="flex items-center">
             <img
               src={resolveAssetPath('/Logos/Ridepedia isotipo.png')}
@@ -61,6 +72,22 @@ export function AppLayout() {
           >
             Catálogo
           </NavLink>
+          </div>
+
+          <nav className="mt-3 flex gap-2 overflow-x-auto pb-1">
+            {portalLinks.map((link) => (
+              <NavLink
+                key={link.to}
+                to={link.to}
+                end={link.to === '/'}
+                className={({ isActive }) =>
+                  `shrink-0 rounded-full border px-4 py-2 text-xs uppercase tracking-[0.22em] transition ${isActive ? 'border-[#9D2235]/18 bg-[#9D2235] text-white shadow-[0_12px_24px_rgba(157,34,53,0.2)]' : 'border-black/8 bg-white/72 text-black/58 hover:border-black/16 hover:text-black'}`
+                }
+              >
+                {link.label}
+              </NavLink>
+            ))}
+          </nav>
         </div>
       </motion.header>
 
@@ -88,6 +115,14 @@ export function AppLayout() {
           >
             Explorar catálogo
           </NavLink>
+        </div>
+
+        <div className="section-shell flex flex-wrap gap-2 pb-10">
+          {portalLinks.slice(2).map((link) => (
+            <NavLink key={link.to} to={link.to} className="rounded-full border border-black/10 bg-white/70 px-4 py-2 text-xs uppercase tracking-[0.22em] text-black/58 transition hover:text-black">
+              {link.label}
+            </NavLink>
+          ))}
         </div>
       </footer>
     </div>
