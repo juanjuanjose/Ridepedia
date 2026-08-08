@@ -1,6 +1,5 @@
 import { Navigate, useParams } from 'react-router-dom'
 
-import { LearnBikeSection } from '../components/sections/LearnBikeSection'
 import { MotorcycleDetailHero } from '../components/sections/MotorcycleDetailHero'
 import { SpecsSection } from '../components/sections/SpecsSection'
 import { findMotorcycleBySlug } from '../data/motorcycles'
@@ -22,7 +21,6 @@ export function MotorcycleDetailPage() {
     <>
       <MotorcycleDetailHero motorcycle={motorcycle} />
       <SpecsSection motorcycle={motorcycle} />
-      <LearnBikeSection />
     </>
   )
 }

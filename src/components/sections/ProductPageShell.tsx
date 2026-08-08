@@ -83,7 +83,7 @@ export function ProductPageShell({
 
             <div className="rounded-[32px] bg-[linear-gradient(180deg,#111827,#020617)] p-6 shadow-[0_28px_90px_rgba(15,23,42,0.18)] md:p-7">
               <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-4">
-                <p className="text-xs uppercase tracking-[0.32em] text-white/42">Current role</p>
+                <p className="text-xs uppercase tracking-[0.32em] text-white/42">Estado actual</p>
                 <span
                   className="rounded-full border px-4 py-2 text-[0.7rem] uppercase tracking-[0.24em] text-white/82"
                   style={{ borderColor: `${accent}66`, backgroundColor: `${accent}22` }}

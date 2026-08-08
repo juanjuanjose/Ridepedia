@@ -16,7 +16,7 @@ type Destination = {
 const destinations: Destination[] = [
   {
     name: 'Wiki / catálogo',
-    status: 'Disponible',
+    status: 'En vivo',
     phase: 'Explorar',
     description: 'El punto de entrada para descubrir modelos, marcas y fichas con suficiente contexto para seguir comparando.',
     highlights: ['Fichas estructuradas', 'Exploración por categoría', 'Descubrimiento por marca'],
@@ -26,7 +26,7 @@ const destinations: Destination[] = [
   },
   {
     name: 'Comparador visual',
-    status: 'Ver pagina',
+    status: 'Preview',
     phase: 'Comparar',
     description: 'Una lectura persona vs moto para entender tamaño, postura y ergonomía con mucho más realismo.',
     highlights: ['Referencia humana', 'Lectura 3D lado a lado', 'Mejor noción de encaje'],
@@ -35,7 +35,7 @@ const destinations: Destination[] = [
   },
   {
     name: 'Comparador técnico',
-    status: 'Ver pagina',
+    status: 'Siguiente MVP',
     phase: 'Elegir',
     description: 'Comparaciones moto vs moto con foco en specs clave, diferencias reales y decisión de compra.',
     highlights: ['Deltas de specs', 'Contexto de compra', 'Filtro por categoría'],
@@ -44,7 +44,7 @@ const destinations: Destination[] = [
   },
   {
     name: 'Marketplace',
-    status: 'Ver pagina',
+    status: 'Roadmap',
     phase: 'Comprar',
     description: 'Avisos mejor conectados con el contexto de cada modelo para comprar y vender con más confianza.',
     highlights: ['Avisos ligados al modelo', 'Más contexto para comprar', 'Mejor confianza de producto'],
@@ -53,7 +53,7 @@ const destinations: Destination[] = [
   },
   {
     name: 'Comunidad / social',
-    status: 'Ver pagina',
+    status: 'Roadmap',
     phase: 'Compartir',
     description: 'Perfiles, actividad y conversación para seguir motos, marcas y gente con la misma obsesión.',
     highlights: ['Perfiles y follows', 'Conversación útil', 'Actividad alrededor de modelos'],
@@ -62,7 +62,7 @@ const destinations: Destination[] = [
   },
   {
     name: 'Noticias / editorial',
-    status: 'Ver pagina',
+    status: 'MVP en armado',
     phase: 'Leer',
     description: 'Lanzamientos, novedades de marca y cobertura del sector con una presentación más cuidada y actual.',
     highlights: ['Cobertura de lanzamientos', 'Contexto de industria', 'Curaduría editorial'],
@@ -82,7 +82,7 @@ export function PortalDestinationsSection() {
           <div className="max-w-3xl">
             <p className="editorial-eyebrow text-black/45">Mapa del portal</p>
             <h2 className="mt-3 text-3xl font-semibold text-black sm:text-[2.4rem] sm:leading-[1.05]">
-              Todo lo importante de Ridepedia, ordenado para entrar rapido y seguir explorando.
+              Todo lo importante de Ridepedia, ordenado para mostrar qué ya vive y qué todavía está creciendo.
             </h2>
           </div>
 
@@ -90,7 +90,7 @@ export function PortalDestinationsSection() {
             {[
               { label: 'Destinos', value: '6' },
               { label: 'Prioridad', value: 'Catálogo' },
-              { label: 'Gancho', value: '3D' },
+              { label: 'Siguiente capa', value: 'Comparar' },
             ].map((item) => (
               <div key={item.label} className="rounded-[22px] border border-black/8 bg-white/82 px-4 py-4 text-center">
                 <p className="text-xs uppercase tracking-[0.3em] text-black/42">{item.label}</p>
@@ -125,7 +125,7 @@ export function PortalDestinationsSection() {
             <div className="mt-6 rounded-[24px] border border-white/10 bg-white/6 px-5 py-5">
               <p className="text-xs uppercase tracking-[0.32em] text-white/42">Por donde empezar</p>
               <p className="mt-3 max-w-2xl text-sm leading-7 text-white/68">
-                Si queres descubrir motos, este es el mejor primer clic: marcas, categorias y fichas reales en una sola entrada.
+                Si quieres descubrir motos, este es el mejor primer clic: marcas, categorías y fichas reales en una sola entrada.
               </p>
             </div>
 
@@ -133,7 +133,7 @@ export function PortalDestinationsSection() {
               <div>
                 <p className="text-xs uppercase tracking-[0.32em] text-white/42">Por qué lidera</p>
                 <p className="mt-2 text-sm leading-7 text-white/68">
-                  Ya ofrece el producto mas util del ecosistema y vuelve más fuerte todo lo que viene alrededor.
+                  Ya ofrece el producto más útil del ecosistema y vuelve más fuerte todo lo que viene alrededor.
                 </p>
               </div>
 
@@ -153,9 +153,9 @@ export function PortalDestinationsSection() {
               <p className="text-xs uppercase tracking-[0.32em] text-black/42">Lectura rápida</p>
               <div className="mt-4 grid gap-3 sm:grid-cols-3">
                 {[
-                  'Portada clara y sin ruido.',
-                  'Cada vertical vive en su propia página.',
-                  'El 3D sigue visible como firma del producto.',
+                  'La portada tiene que ser clara, no grandilocuente.',
+                  'Las rutas fuertes deben verse diferentes del roadmap.',
+                  'El 3D sigue visible como firma, no como truco aislado.',
                 ].map((item) => (
                   <div key={item} className="rounded-[22px] border border-black/8 bg-white/78 px-4 py-4 text-sm leading-6 text-black/66">
                     {item}
@@ -196,7 +196,7 @@ export function PortalDestinationsSection() {
                     className="mt-5 inline-flex rounded-full px-4 py-2 text-sm font-medium transition hover:-translate-y-0.5"
                     style={{ color: destination.accent, backgroundColor: `${destination.accent}12` }}
                   >
-                    Abrir destino
+                    {destination.status === 'En vivo' || destination.status === 'Siguiente MVP' || destination.status === 'MVP en armado' ? 'Abrir destino' : 'Ver preview'}
                   </Link>
                 ) : null}
               </article>

@@ -3,73 +3,73 @@ import { ProductPageShell } from '../components/sections/ProductPageShell'
 export function VisualComparatorPage() {
   return (
     <ProductPageShell
-      eyebrow="Visual comparator"
-      title="A rider-versus-bike comparison product built to answer the fit question before specs take over."
-      description="This vertical explains the visual comparator as its own product: a person scaled by rider height standing next to a motorcycle, helping users understand silhouette, ergonomic impression, and physical presence in a way numbers alone cannot deliver."
-      statusLabel="MVP framing"
+      eyebrow="Comparador visual"
+      title="Un producto persona-contra-moto pensado para responder la pregunta del encaje antes de que los specs tomen todo el control."
+      description="Esta vertical explica el comparador visual como producto propio: una persona escalada según su altura al lado de una moto, para entender silueta, postura e impresión física de un modo que los números solos no pueden resolver."
+      statusLabel="Preview creíble"
       accent="#0F766E"
-      highlights={['Person vs motorcycle', 'Scale and stance', '3D-friendly direction']}
+      highlights={['Persona vs moto', 'Escala y postura', 'Dirección compatible con 3D']}
       metrics={[
         {
-          label: 'Core question',
-          value: 'How will it feel?',
-          detail: 'The product focuses on perceived fit, stance, and visual scale before a rider commits to deeper research.',
+          label: 'Pregunta central',
+          value: '¿Cómo me va a quedar?',
+          detail: 'El producto se enfoca en encaje percibido, postura y escala visual antes de que el usuario se meta en una investigación más profunda.',
         },
         {
-          label: 'Interaction model',
-          value: 'Height-led comparison',
-          detail: 'A rider figure can be scaled from user height input and placed next to one motorcycle at a time for clearer visual reading.',
+          label: 'Modelo de interacción',
+          value: 'Comparación guiada por altura',
+          detail: 'Una figura humana puede escalarse desde la altura del usuario y ponerse junto a una moto por vez para una lectura visual más clara.',
         },
         {
-          label: 'Relationship to home',
-          value: 'Supports LearnBike',
-          detail: 'The homepage keeps the 3D experience visible because it makes this future product feel believable, not speculative.',
+          label: 'Relación con la home',
+          value: 'Refuerza LearnBike',
+          detail: 'La home deja el 3D visible porque hace que este futuro producto se sienta creíble y no puramente especulativo.',
         },
       ]}
-      primaryCta={{ label: 'Return to LearnBike on home', to: '/' }}
-      secondaryCta={{ label: 'Open technical comparator', to: '/technical-comparator' }}
+      primaryCta={{ label: 'Volver a LearnBike en home', to: '/' }}
+      secondaryCta={{ label: 'Ver comparador técnico', to: '/technical-comparator' }}
       sections={[
         {
-          eyebrow: 'Product concept',
-          title: 'This is not a spreadsheet view. It is a visual understanding tool.',
-          description: 'Its job is to answer questions that riders often struggle to evaluate from dealer photos or isolated spec sheets.',
+          eyebrow: 'Concepto de producto',
+          title: 'Esto no es una planilla. Es una herramienta para entender visualmente una moto.',
+          description: 'Su trabajo es responder preguntas que muchas veces cuestan evaluar desde fotos de concesionario o fichas aisladas.',
           cards: [
             {
-              meta: 'Fit reading',
-              title: 'Rider scale next to the bike',
-              description: 'Show a rider avatar scaled from entered height in centimeters to create a more honest sense of proportion around the motorcycle.',
+              meta: 'Lectura de encaje',
+              title: 'Escala humana al lado de la moto',
+              description: 'Mostrar un avatar escalado desde la altura ingresada en centímetros para generar una noción más honesta de proporción frente a la moto.',
             },
             {
-              meta: 'Perspective control',
-              title: 'Switchable viewpoints',
-              description: 'A side profile is essential first, but front and three-quarter views can deepen the reading of width, seat height, and stance.',
+              meta: 'Control de perspectiva',
+              title: 'Vistas intercambiables',
+              description: 'El perfil lateral es esencial, pero frente y tres cuartos pueden profundizar la lectura de ancho, altura de asiento y postura.',
             },
             {
-              meta: 'Decision value',
-              title: 'Reduce uncertainty early',
-              description: 'The comparator helps users eliminate clearly mismatched options before they spend time on full specification comparison.',
+              meta: 'Valor de decisión',
+              title: 'Reducir incertidumbre temprano',
+              description: 'El comparador ayuda a descartar opciones claramente desalineadas antes de gastar tiempo comparando specs completos.',
             },
             {
-              meta: 'Future depth',
-              title: 'Mounted rider later',
-              description: 'A seated or mounted pose would be a more advanced phase because it introduces posture complexity and model alignment work.',
+              meta: 'Profundidad futura',
+              title: 'Piloto montado más adelante',
+              description: 'Una pose sentada o montada sería una fase más avanzada porque introduce complejidad de postura y alineación de modelos.',
             },
           ],
         },
         {
-          eyebrow: 'MVP framing',
-          title: 'The dedicated page gives the concept enough space to feel like a real product lane.',
-          description: 'That separation matters. Cramming this explanation into the homepage weakens both the story and the hierarchy of the portal.',
+          eyebrow: 'Cómo presentarlo',
+          title: 'La página dedicada le da al concepto el espacio suficiente para sentirse como una vertical real.',
+          description: 'Esa separación importa. Meter toda esta explicación dentro de la home debilita tanto el relato como la jerarquía del portal.',
           cards: [
             {
-              meta: 'Immediate value',
-              title: 'Explain the comparison journey',
-              description: 'Position the page as the place where Ridepedia will help riders understand physical fit before comparing engine and performance data.',
+              meta: 'Valor inmediato',
+              title: 'Explicar el recorrido de comparación',
+              description: 'Posicionar la página como el lugar donde Ridepedia ayudará a entender encaje físico antes de comparar motor y rendimiento.',
             },
             {
-              meta: 'Design principle',
-              title: 'Visual first, disciplined second',
-              description: 'Keep the experience aspirational but clear about scope so the page feels premium without pretending the full tool already exists.',
+              meta: 'Principio de diseño',
+              title: 'Visual primero, humo no',
+              description: 'Mantener la experiencia aspiracional pero clara sobre el alcance, para que se sienta premium sin fingir que la herramienta completa ya existe.',
             },
           ],
         },

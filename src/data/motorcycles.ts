@@ -38,6 +38,11 @@ export const motorcycles: Motorcycle[] = [
     model3d: {
       localPath: resolveAssetPath('/motorcycles/2024-ducati-streetfighter-v4-s/source/2024%20Ducati%20StreetFighter%20V4%20S.glb'),
     },
+    technicalSearch: {
+      make: 'Ducati',
+      model: 'Streetfighter V4',
+      year: 2024,
+    },
   },
   {
     id: 'bmw-r-1300-gs',
@@ -71,6 +76,11 @@ export const motorcycles: Motorcycle[] = [
       carImagesQuery: { make: 'BMW', model: 'R 1300 GS', year: 2024 },
       wikimediaFileName: 'BMW R 1300 GS Option 719 Tramuntana (2024) on display, front left.jpg',
     },
+    technicalSearch: {
+      make: 'BMW',
+      model: 'R 1300 GS',
+      year: 2024,
+    },
   },
   {
     id: 'triumph-street-triple-rs',
@@ -103,6 +113,11 @@ export const motorcycles: Motorcycle[] = [
       carImagesQuery: { make: 'Triumph', model: 'Street Triple RS', year: 2024 },
       wikimediaFileName: 'Triumph Street Triple RS 2023.jpg',
     },
+    technicalSearch: {
+      make: 'Triumph',
+      model: 'Street Triple RS',
+      year: 2024,
+    },
   },
   {
     id: 'yamaha-tenere-700',
@@ -134,6 +149,11 @@ export const motorcycles: Motorcycle[] = [
     media: {
       carImagesQuery: { make: 'Yamaha', model: 'Tenere 700', year: 2024 },
       wikimediaFileName: 'Yamaha T7 2019 1X7A2370.jpg',
+    },
+    technicalSearch: {
+      make: 'Yamaha',
+      model: 'Tenere 700',
+      year: 2024,
     },
   },
 ]
