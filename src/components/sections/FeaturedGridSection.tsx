@@ -17,7 +17,7 @@ export function FeaturedGridSection() {
         <div className="rounded-[32px] border border-black/8 bg-[linear-gradient(180deg,#f8f4ef,#f2ede7)] p-6 shadow-[0_20px_70px_rgba(15,23,42,0.08)] md:p-8">
           <p className="editorial-eyebrow text-black/45">Valor actual</p>
           <h2 className="mt-3 text-3xl font-semibold text-black sm:text-[2.6rem] sm:leading-[1.04]">
-            Motos reales para mirar ahora, no promesas para algun dia.
+            Motos reales para ver ahora, no promesas para algún día.
           </h2>
 
           <div className="mt-8 grid gap-3">

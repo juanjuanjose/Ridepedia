@@ -3,73 +3,73 @@ import { ProductPageShell } from '../components/sections/ProductPageShell'
 export function CommunityPage() {
   return (
     <ProductPageShell
-      eyebrow="Community"
-      title="A disciplined participation layer that grows from product depth instead of trying to fake engagement too early."
-      description="The community page presents Ridepedia's future social direction with restraint. It should show where profiles, rider follow systems, and useful discussion can go, without pretending the platform needs noisy social mechanics before the core motorcycle experience is mature enough."
-      statusLabel="Future participation lane"
+      eyebrow="Comunidad"
+      title="Una futura capa de participación que crece desde la profundidad del producto, no desde engagement fingido."
+      description="La página de comunidad presenta la dirección social futura de Ridepedia con bastante cuidado. Tiene que mostrar hacia dónde podrían ir perfiles, follows y discusión útil, sin fingir que la plataforma necesita mecánicas sociales ruidosas antes de madurar su núcleo moto."
+      statusLabel="Roadmap de participación"
       accent="#7C3AED"
-      highlights={['Profiles with purpose', 'Model-centered discussion', 'Earned participation']}
+      highlights={['Perfiles con propósito', 'Discusión sobre modelos', 'Participación ganada']}
       metrics={[
         {
-          label: 'Participation principle',
-          value: 'Utility before chatter',
-          detail: 'Community only works if users already have reasons to return for catalog depth, comparisons, and editorial value.',
+          label: 'Principio base',
+          value: 'Utilidad antes que ruido',
+          detail: 'La comunidad solo funciona si el usuario ya tiene razones para volver por catálogo, comparaciones y valor editorial.',
         },
         {
-          label: 'Best anchor',
-          value: 'Models and decisions',
-          detail: 'Discussion should attach to motorcycle pages, comparisons, ownership notes, and launches instead of floating without context.',
+          label: 'Mejor ancla',
+          value: 'Modelos y decisiones',
+          detail: 'La discusión debería engancharse a páginas de motos, comparaciones, notas de uso y lanzamientos en vez de flotar sin contexto.',
         },
         {
-          label: 'MVP message',
-          value: 'Intentional, not loud',
-          detail: 'The page communicates serious direction without turning the current product into a generic social feed.',
+          label: 'Mensaje del MVP',
+          value: 'Intencional, no ruidoso',
+          detail: 'La página comunica dirección seria sin convertir el producto actual en un feed social genérico.',
         },
       ]}
-      primaryCta={{ label: 'Explore the live catalog', to: '/catalog' }}
-      secondaryCta={{ label: 'Read editorial direction', to: '/news' }}
+      primaryCta={{ label: 'Explorar el catálogo vivo', to: '/catalog' }}
+      secondaryCta={{ label: 'Ver dirección editorial', to: '/news' }}
       sections={[
         {
-          eyebrow: 'Participation design',
-          title: 'The strongest community features are anchored to real rider value.',
-          description: 'That means emphasizing identity, ownership context, and useful interaction around motorcycles rather than copying mainstream social patterns.',
+          eyebrow: 'Diseño de participación',
+          title: 'Las mejores funciones de comunidad se apoyan en valor real para el rider.',
+          description: 'Eso significa enfatizar identidad, contexto de uso y conversación útil alrededor de las motos, en vez de copiar patrones sociales genéricos.',
           cards: [
             {
-              meta: 'Identity layer',
-              title: 'Profiles built around motorcycles',
-              description: 'Rider profiles can eventually highlight owned bikes, wishlists, comparison history, and saved models instead of vanity-first social signals.',
+              meta: 'Capa de identidad',
+              title: 'Perfiles construidos alrededor de motos',
+              description: 'Los perfiles podrían destacar motos propias, wishlist, historial de comparación y modelos guardados en vez de señales vacías de vanidad social.',
             },
             {
-              meta: 'Discussion layer',
-              title: 'Conversations attached to products',
-              description: 'Comments and threads make more sense when they live around launches, model pages, and comparison decisions users actually care about.',
+              meta: 'Capa de discusión',
+              title: 'Conversaciones pegadas al producto',
+              description: 'Comentarios e hilos tienen más sentido cuando viven alrededor de lanzamientos, fichas y decisiones de comparación que de verdad importan.',
             },
             {
-              meta: 'Contribution layer',
-              title: 'Community knowledge with moderation',
-              description: 'Ridepedia can later invite owner impressions, practical notes, and corrections in a controlled format that protects information quality.',
+              meta: 'Capa de aporte',
+              title: 'Conocimiento comunitario con moderación',
+              description: 'Más adelante Ridepedia puede invitar impresiones de dueños, notas prácticas y correcciones en un formato controlado que proteja la calidad de información.',
             },
             {
-              meta: 'Retention layer',
-              title: 'Follow what matters',
-              description: 'Following brands, categories, and selected motorcycles is more useful than a broad social graph with no product purpose.',
+              meta: 'Capa de retención',
+              title: 'Seguir lo que sí importa',
+              description: 'Seguir marcas, categorías y motos concretas es mucho más útil que una red social amplia sin propósito de producto.',
             },
           ],
         },
         {
-          eyebrow: 'Maturity rule',
-          title: 'This page matters because it keeps community visible without letting it dominate too soon.',
-          description: 'That is a healthier product posture than squeezing speculative social previews into the homepage.',
+          eyebrow: 'Regla de madurez',
+          title: 'Esta página importa porque mantiene visible la comunidad sin dejar que domine demasiado pronto.',
+          description: 'Esa es una postura de producto mucho más sana que meter previews sociales especulativos adentro de la homepage.',
           cards: [
             {
-              meta: 'Current role',
-              title: 'Signal future participation',
-              description: 'The MVP page shows that community is part of the roadmap while preserving the homepage as a clean portal into clearer product areas.',
+              meta: 'Rol actual',
+              title: 'Señalar la participación futura',
+              description: 'La página deja claro que comunidad forma parte del roadmap, mientras preserva la home como un portal limpio hacia áreas más claras del producto.',
             },
             {
-              meta: 'Later role',
-              title: 'Deepen loyalty and repeat use',
-              description: 'Once the catalog and comparator layers are stronger, community can become the mechanism that keeps riders coming back with purpose.',
+              meta: 'Rol futuro',
+              title: 'Profundizar lealtad y recurrencia',
+              description: 'Cuando el catálogo y la capa de comparación sean más fuertes, comunidad puede convertirse en el mecanismo que haga volver a la gente con propósito.',
             },
           ],
         },

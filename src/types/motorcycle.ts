@@ -21,6 +21,12 @@ export interface MotorcycleModelConfig {
   localPath?: string
 }
 
+export interface MotorcycleTechnicalSearchConfig {
+  make: string
+  model: string
+  year?: number
+}
+
 export interface Motorcycle {
   id: string
   slug: string
@@ -38,6 +44,7 @@ export interface Motorcycle {
   anatomyNotes: string[]
   media: MotorcycleMediaConfig
   model3d?: MotorcycleModelConfig
+  technicalSearch?: MotorcycleTechnicalSearchConfig
 }
 
 export interface MotorcycleMediaAsset {
