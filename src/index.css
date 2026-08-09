@@ -4,16 +4,30 @@
   color-scheme: light;
   font-family: Inter, system-ui, sans-serif;
   background-color: #F5F3EF;
-  color: #090909;
+  color: #111111;
   --ride-bg: #F5F3EF;
-  --ride-surface: rgba(255, 255, 255, 0.72);
+  --ride-surface: rgba(255, 255, 255, 0.78);
   --ride-surface-strong: rgba(255, 255, 255, 0.92);
-  --ride-line: rgba(9, 9, 9, 0.12);
-  --ride-copy: #090909;
-  --ride-copy-muted: rgba(9, 9, 9, 0.64);
+  --ride-line: rgba(17, 17, 17, 0.1);
+  --ride-copy: #111111;
+  --ride-copy-muted: rgba(17, 17, 17, 0.64);
   --ride-cream: #F5F3EF;
-  --ride-paper: #fcfbf8;
-  --ride-ink: #090909;
+  --ride-paper: #FCFBF8;
+  --ride-ink: #111111;
+  --ride-brand: #9D2235;
+  --ride-brand-strong: #7F1B2B;
+  --ride-brand-soft: rgba(157, 34, 53, 0.1);
+  --ride-brand-line: rgba(157, 34, 53, 0.2);
+  --ride-tech: #2563EB;
+  --ride-tech-soft: rgba(37, 99, 235, 0.1);
+  --ride-tech-line: rgba(37, 99, 235, 0.2);
+  --ride-insight: #0F766E;
+  --ride-insight-soft: rgba(15, 118, 110, 0.1);
+  --ride-insight-line: rgba(15, 118, 110, 0.2);
+  --ride-dark: #0F172A;
+  --ride-dark-2: #111827;
+  --ride-copy-on-dark: rgba(255, 255, 255, 0.88);
+  --ride-copy-on-dark-muted: rgba(255, 255, 255, 0.68);
 }
 
 html {

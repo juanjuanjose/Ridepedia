@@ -15,16 +15,16 @@ export function FeaturedGridSection() {
     <Reveal className="section-shell mt-20">
       <section className="grid gap-6 xl:grid-cols-[0.82fr_1.18fr]">
         <div className="rounded-[32px] border border-black/8 bg-[linear-gradient(180deg,#f8f4ef,#f2ede7)] p-6 shadow-[0_20px_70px_rgba(15,23,42,0.08)] md:p-8">
-          <p className="editorial-eyebrow text-black/45">Valor actual</p>
+          <p className="editorial-eyebrow text-black/45">Selección destacada</p>
           <h2 className="mt-3 text-3xl font-semibold text-black sm:text-[2.6rem] sm:leading-[1.04]">
-            Motos reales para ver ahora, no promesas para algún día.
+            Tres motos para entrar rápido en el catálogo.
           </h2>
 
           <div className="mt-8 grid gap-3">
             {[
-              'Modelos con presencia visual fuerte',
-              'Acceso directo a fichas reales',
-              'Selección pensada para seguir explorando',
+              'Naked premium para ver tecnología y diseño',
+              'Adventure grande para leer la categoría alta',
+              'Deportiva de calle para comparar sensaciones y tamaño',
             ].map((item) => (
               <div key={item} className="rounded-[22px] border border-black/8 bg-white/82 px-4 py-4 text-sm leading-7 text-black/68">
                 {item}
@@ -35,13 +35,13 @@ export function FeaturedGridSection() {
           <div className="mt-8 rounded-[24px] border border-black/8 bg-white/82 p-5">
             <p className="text-xs uppercase tracking-[0.3em] text-black/42">Selección destacada</p>
             <p className="mt-3 text-sm leading-7 text-black/66">
-              Una mezcla de motos aspiracionales, fichas navegables y buen material visual para que la portada tenga peso real.
+              Streetfighter V4 S, R 1300 GS y Street Triple RS abren tres entradas claras al catálogo actual.
             </p>
           </div>
 
           <Link
             to="/catalog"
-            className="mt-8 inline-flex rounded-full bg-[#9D2235] px-6 py-3 text-sm font-medium text-white shadow-[0_12px_24px_rgba(157,34,53,0.22)] transition hover:-translate-y-0.5"
+            className="mt-8 inline-flex rounded-full bg-[var(--ride-brand)] px-6 py-3 text-sm font-medium text-white shadow-[0_12px_24px_rgba(157,34,53,0.22)] transition hover:-translate-y-0.5 hover:bg-[var(--ride-brand-strong)]"
           >
             Explorar catálogo
           </Link>
@@ -73,7 +73,7 @@ export function FeaturedGridSection() {
                   <h3 className="mt-2 text-2xl font-semibold text-black">{motorcycle.brand}</h3>
                   <p className="text-black/70">{motorcycle.model}</p>
                 </div>
-                <span className="rounded-full border border-black/10 bg-[#f8f4ef] px-3 py-1 text-xs text-black/65">Ficha real</span>
+                <span className="rounded-full border border-black/10 bg-[var(--ride-paper)] px-3 py-1 text-xs text-black/65">Ficha real</span>
               </div>
 
               <p className="text-sm leading-7 text-black/62">{popularDescriptions[motorcycle.id] ?? motorcycle.model}</p>

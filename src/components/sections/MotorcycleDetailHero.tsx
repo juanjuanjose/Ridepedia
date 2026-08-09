@@ -23,6 +23,7 @@ export function MotorcycleDetailHero({ motorcycle }: MotorcycleDetailHeroProps) 
         <div>
           <p className="text-xs uppercase tracking-[0.35em] text-black/45">{motorcycle.brand}</p>
           <h1 className="mt-3 text-4xl font-semibold text-black sm:text-5xl sm:leading-[1.02]">{motorcycle.model}</h1>
+          <p className="mt-3 text-sm uppercase tracking-[0.28em] text-black/42">{motorcycle.tagline}</p>
           <p className="mt-4 text-lg leading-8 text-black/66">{motorcycle.summary}</p>
         </div>
 
@@ -42,7 +43,7 @@ export function MotorcycleDetailHero({ motorcycle }: MotorcycleDetailHeroProps) 
         <div className="flex flex-wrap gap-3">
           <Link
             to={`/technical-comparator?left=${motorcycle.slug}`}
-            className="inline-flex rounded-full bg-[#2563EB] px-5 py-3 text-sm font-medium text-white shadow-[0_12px_24px_rgba(37,99,235,0.24)] transition hover:-translate-y-0.5"
+            className="inline-flex rounded-full bg-[var(--ride-tech)] px-5 py-3 text-sm font-medium text-white shadow-[0_12px_24px_rgba(37,99,235,0.24)] transition hover:-translate-y-0.5"
           >
             Llevar al comparador técnico
           </Link>

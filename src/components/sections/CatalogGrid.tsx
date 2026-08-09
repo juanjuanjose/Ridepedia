@@ -12,13 +12,13 @@ export function CatalogGrid({ motorcycles }: CatalogGridProps) {
     <section className="section-shell mt-10">
       <div className="mb-6 flex flex-col gap-4 rounded-[30px] border border-black/8 bg-white/74 px-5 py-5 shadow-[0_18px_48px_rgba(15,23,42,0.05)] lg:flex-row lg:items-center lg:justify-between">
         <div className="max-w-2xl">
-          <p className="text-xs uppercase tracking-[0.3em] text-black/42">Selección actual</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-black/42">Catálogo actual</p>
           <p className="mt-2 text-sm leading-7 text-black/64">
-            Cada card tiene que ayudarte a decidir si vale la pena entrar a la ficha. La idea no es llenar la grilla: es hacer que cada modelo se sienta curado.
+            Veinte motos reales entre naked, adventure, sport y modern classic para empezar a comparar categorías, marcas y propuestas de uso.
           </p>
         </div>
         <div className="flex flex-wrap gap-2">
-          {['Exploración por marca', 'Detalle real', 'Preparado para comparar'].map((item) => (
+          {['20 motos', '4 categorías', 'Comparador activo'].map((item) => (
             <span key={item} className="rounded-full border border-black/10 bg-[var(--ride-paper)] px-3 py-2 text-[0.68rem] uppercase tracking-[0.22em] text-black/58">
               {item}
             </span>
@@ -55,7 +55,7 @@ export function CatalogGrid({ motorcycles }: CatalogGridProps) {
                 </Link>
                 <p className="mt-1 text-sm text-black/64">{motorcycle.tagline}</p>
               </div>
-              <span className="rounded-full border border-black/10 bg-[#f8f4ef] px-3 py-1 text-xs text-black/62">Ficha real</span>
+              <span className="rounded-full border border-black/10 bg-[var(--ride-paper)] px-3 py-1 text-xs text-black/62">Ficha real</span>
             </div>
 
             <p className="text-sm leading-7 text-black/64">{motorcycle.summary}</p>
@@ -69,12 +69,12 @@ export function CatalogGrid({ motorcycles }: CatalogGridProps) {
             </div>
 
             <div className="flex flex-wrap gap-3 pt-1">
-              <Link to={`/motorcycles/${motorcycle.slug}`} className="inline-flex items-center text-sm font-medium text-[#9D2235] transition group-hover:translate-x-1">
+              <Link to={`/motorcycles/${motorcycle.slug}`} className="inline-flex items-center text-sm font-medium text-[var(--ride-brand)] transition group-hover:translate-x-1 hover:text-[var(--ride-brand-strong)]">
                 Abrir ficha
               </Link>
               <Link
                 to={`/technical-comparator?left=${motorcycle.slug}`}
-                className="inline-flex items-center rounded-full border border-[#2563EB]/16 bg-[#2563EB]/8 px-4 py-2 text-xs font-medium uppercase tracking-[0.22em] text-[#2563EB] transition hover:border-[#2563EB]/32"
+                className="inline-flex items-center rounded-full border border-[var(--ride-tech-line)] bg-[var(--ride-tech-soft)] px-4 py-2 text-xs font-medium uppercase tracking-[0.22em] text-[var(--ride-tech)] transition hover:border-[var(--ride-tech)]/40"
               >
                 Comparar
               </Link>
