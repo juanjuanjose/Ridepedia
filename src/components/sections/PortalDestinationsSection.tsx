@@ -62,12 +62,12 @@ const destinations: Destination[] = [
   },
   {
     name: 'Noticias / editorial',
-    status: 'MVP en armado',
+    status: 'En desarrollo activo',
     phase: 'Leer',
-    description: 'Lanzamientos, novedades de marca y cobertura del sector con una presentación más cuidada y actual.',
-    highlights: ['Cobertura de lanzamientos', 'Contexto de industria', 'Curaduría editorial'],
+    description: 'Actualidad general del mundo motero con mirada de medio digital: industria, cultura, producto y contexto para navegar mejor el portal.',
+    highlights: ['Actualidad del sector', 'Contexto de industria', 'Cultura motera'],
     href: '/news',
-    accent: '#1F2937',
+    accent: '#9D2235',
   },
 ]
 
@@ -82,16 +82,16 @@ export function PortalDestinationsSection() {
           <div className="max-w-3xl">
             <p className="editorial-eyebrow text-black/45">Mapa del portal</p>
             <h2 className="mt-3 text-3xl font-semibold text-black sm:text-[2.4rem] sm:leading-[1.05]">
-              Todo lo importante de Ridepedia, ordenado para mostrar qué ya vive y qué todavía está creciendo.
+              Entradas principales para explorar catálogo, noticias y comparación.
             </h2>
           </div>
 
           <div className="grid gap-3 sm:grid-cols-3 lg:min-w-[24rem]">
-            {[
-              { label: 'Destinos', value: '6' },
-              { label: 'Prioridad', value: 'Catálogo' },
-              { label: 'Siguiente capa', value: 'Comparar' },
-            ].map((item) => (
+              {[
+                { label: 'Motos', value: '20' },
+                { label: 'Noticias', value: 'Activas' },
+                { label: 'Comparar', value: 'Disponible' },
+              ].map((item) => (
               <div key={item.label} className="rounded-[22px] border border-black/8 bg-white/82 px-4 py-4 text-center">
                 <p className="text-xs uppercase tracking-[0.3em] text-black/42">{item.label}</p>
                 <p className="mt-2 text-lg font-medium text-black">{item.value}</p>
@@ -104,7 +104,7 @@ export function PortalDestinationsSection() {
           <article className="overflow-hidden rounded-[30px] border border-black/8 bg-[linear-gradient(180deg,#111827,#020617)] p-6 shadow-[0_28px_90px_rgba(15,23,42,0.18)] md:p-7">
             <div className="flex flex-wrap items-start justify-between gap-4">
               <div className="max-w-2xl">
-              <p className="text-xs uppercase tracking-[0.34em] text-white/42">Destino principal</p>
+               <p className="text-xs uppercase tracking-[0.34em] text-white/42">Destino principal</p>
                 <h3 className="mt-3 text-3xl font-semibold text-white sm:text-[2.6rem] sm:leading-[1.02]">{primaryDestination.name}</h3>
                 <p className="mt-4 text-base leading-8 text-white/68">{primaryDestination.description}</p>
               </div>
@@ -122,25 +122,25 @@ export function PortalDestinationsSection() {
               ))}
             </div>
 
-            <div className="mt-6 rounded-[24px] border border-white/10 bg-white/6 px-5 py-5">
-              <p className="text-xs uppercase tracking-[0.32em] text-white/42">Por donde empezar</p>
-              <p className="mt-3 max-w-2xl text-sm leading-7 text-white/68">
-                Si quieres descubrir motos, este es el mejor primer clic: marcas, categorías y fichas reales en una sola entrada.
-              </p>
-            </div>
+              <div className="mt-6 rounded-[24px] border border-white/10 bg-white/6 px-5 py-5">
+              <p className="text-xs uppercase tracking-[0.32em] text-white/42">Qué vas a encontrar</p>
+               <p className="mt-3 max-w-2xl text-sm leading-7 text-white/68">
+                 Marcas, categorías y fichas listas para pasar del vistazo rápido a la comparación técnica.
+               </p>
+             </div>
 
-            <div className="mt-6 flex flex-wrap items-center justify-between gap-4 rounded-[24px] border border-white/10 bg-white/6 px-5 py-4">
-              <div>
-                <p className="text-xs uppercase tracking-[0.32em] text-white/42">Por qué lidera</p>
-                <p className="mt-2 text-sm leading-7 text-white/68">
-                  Ya ofrece el producto más útil del ecosistema y vuelve más fuerte todo lo que viene alrededor.
-                </p>
-              </div>
+             <div className="mt-6 flex flex-wrap items-center justify-between gap-4 rounded-[24px] border border-white/10 bg-white/6 px-5 py-4">
+               <div>
+                <p className="text-xs uppercase tracking-[0.32em] text-white/42">Entrada recomendada</p>
+                 <p className="mt-2 text-sm leading-7 text-white/68">
+                   Si es tu primera visita, el catálogo es la forma más rápida de entender el tono y la variedad de Ridepedia.
+                 </p>
+               </div>
 
               {primaryDestination.href ? (
                 <Link
                   to={primaryDestination.href}
-                  className="inline-flex rounded-full bg-white px-5 py-3 text-sm font-medium text-[#090909] transition hover:-translate-y-0.5"
+                  className="inline-flex rounded-full bg-[var(--ride-brand)] px-5 py-3 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:bg-[var(--ride-brand-strong)]"
                 >
                   Abrir catálogo
                 </Link>
@@ -150,12 +150,12 @@ export function PortalDestinationsSection() {
 
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-2">
             <div className="rounded-[28px] border border-black/8 bg-[#f8f4ef] p-5 xl:col-span-2">
-              <p className="text-xs uppercase tracking-[0.32em] text-black/42">Lectura rápida</p>
+              <p className="text-xs uppercase tracking-[0.32em] text-black/42">Ahora mismo</p>
               <div className="mt-4 grid gap-3 sm:grid-cols-3">
                 {[
-                  'La portada tiene que ser clara, no grandilocuente.',
-                  'Las rutas fuertes deben verse diferentes del roadmap.',
-                  'El 3D sigue visible como firma, no como truco aislado.',
+                  '20 motos para explorar desde el home y el catálogo.',
+                  'Noticias conectadas a modelos y categorías reales.',
+                  'Comparador técnico listo para profundizar una elección.',
                 ].map((item) => (
                   <div key={item} className="rounded-[22px] border border-black/8 bg-white/78 px-4 py-4 text-sm leading-6 text-black/66">
                     {item}
@@ -194,9 +194,9 @@ export function PortalDestinationsSection() {
                   <Link
                     to={destination.href}
                     className="mt-5 inline-flex rounded-full px-4 py-2 text-sm font-medium transition hover:-translate-y-0.5"
-                    style={{ color: destination.accent, backgroundColor: `${destination.accent}12` }}
-                  >
-                    {destination.status === 'En vivo' || destination.status === 'Siguiente MVP' || destination.status === 'MVP en armado' ? 'Abrir destino' : 'Ver preview'}
+                     style={{ color: destination.accent, backgroundColor: `${destination.accent}12` }}
+                   >
+                    {destination.status === 'En vivo' || destination.status === 'Siguiente MVP' || destination.status === 'En desarrollo activo' ? 'Abrir destino' : 'Ver preview'}
                   </Link>
                 ) : null}
               </article>

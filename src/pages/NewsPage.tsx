@@ -1,90 +1,65 @@
 import { Link } from 'react-router-dom'
 
 import { Reveal } from '../components/common/Reveal'
-import { resolveAssetPath } from '../utils/asset-path'
+import { editorialLeadStory, newsroomBriefs, newsroomStories } from '../data/editorial'
 
 const featuredStory = {
   section: 'Tema central',
-  title: 'Las motos que mejor combinan carácter, uso real y tecnología son las que están marcando la agenda de 2025.',
+  title: 'La actualidad del mundo motero se reparte entre mercado, uso real, cultura y motos que marcan tendencia.',
   description:
-    'Más allá de la potencia máxima o del titular fácil, la conversación está girando hacia modelos que resuelven mejor el uso cotidiano, viajan con más sentido y siguen transmitiendo identidad. Esa mezcla explica por qué ciertas naked premium y trail medias están ganando tanta relevancia.',
-  href: '/technical-comparator',
-  cta: 'Ver comparador técnico',
-  image: resolveAssetPath('/Hero images/h2r.jpg'),
-  tags: ['Análisis editorial', 'Lanzamientos 2025', 'Lectura de mercado'],
+    'Marcas en movimiento, segmentos que cambian y modelos que concentran miradas: la agenda del sector ya no se deja leer desde un solo angulo.',
+  href: '/catalog',
+  cta: 'Explorar motos relacionadas',
+  image: editorialLeadStory.image,
+  tags: ['Actualidad motera', 'Lectura de mercado', 'Cultura y producto'],
 }
 
-const headlineStories = [
-  {
-    section: 'Lanzamiento',
-    title: 'Ducati endurece la pelea entre las naked premium con una propuesta cada vez más tecnológica.',
-    summary: 'La Streetfighter V4 S resume bien el momento del segmento: espectáculo visual, electrónica avanzada y un perfil de uso más amplio de lo que parece.',
-    meta: 'Ducati · Producto',
-    href: '/motorcycles/ducati-streetfighter-v4',
-    accent: '#9D2235',
-  },
-  {
-    section: 'Prueba / tendencia',
-    title: 'Las trail medias siguen creciendo porque responden mejor al uso mixto que muchos usuarios realmente tienen.',
-    summary: 'No se trata solo de aventura aspiracional: también pesan comodidad, versatilidad y una postura más fácil de sostener a diario.',
-    meta: 'Yamaha · Uso real',
-    href: '/motorcycles/yamaha-tenere-700',
-    accent: '#2563EB',
-  },
-  {
-    section: 'Mercado',
-    title: 'Comparar antes de comprar ya no se siente opcional cuando la oferta crece y las categorías se superponen.',
-    summary: 'Con más motos bien equipadas en segmentos cercanos, la decisión necesita herramientas más claras que una ficha aislada o una impresión superficial.',
-    meta: 'Decisión de compra',
-    href: '/technical-comparator',
-    accent: '#0F766E',
-  },
-]
+const headlineStories = newsroomStories.slice(0, 3)
 
 const coverageLanes = [
   {
-    eyebrow: 'Cobertura principal',
-    title: 'Noticias que ayudan a leer mejor el producto, no solo a consumir titulares.',
+    eyebrow: 'Industria y mercado',
+    title: 'Las decisiones de marca estan moviendo tanto la conversacion como las motos nuevas.',
     description:
-      'La capa editorial de Ridepedia tiene más valor cuando conecta actualidad con fichas, comparaciones y decisiones reales de compra.',
+      'Reposicionamientos, equipamiento y lectura de segmento pesan cada vez mas en la forma en que se interpreta una novedad.',
     cards: [
       {
-        meta: 'Lanzamientos',
-        title: 'Modelos nuevos que vale la pena seguir',
-        description: 'Versiones, renovaciones y motos clave explicadas con contexto sobre categoría, uso y relevancia real dentro del mercado.',
-      },
-      {
-        meta: 'Pruebas',
-        title: 'Lecturas que vayan más allá del entusiasmo rápido',
-        description: 'Notas que expliquen sensaciones, ergonomía y carácter con una voz editorial más cuidada y menos superficial.',
+        meta: 'Industria',
+        title: 'Las gamas premium se expanden sin abandonar el uso real',
+        description: 'Las marcas estan buscando motos mas completas, no solo mas potentes o mas llamativas.',
       },
       {
         meta: 'Mercado',
-        title: 'Segmentos que cambian y marcas que se reposicionan',
-        description: 'Tendencias que ayudan a entender por qué ciertas motos están ganando atención y cómo eso afecta la decisión de compra.',
+        title: 'Las categorias medias siguen acercandose a propuestas que antes parecian exclusivas',
+        description: 'Mas equipamiento y mejor terminacion estan tensionando el salto entre segmentos.',
       },
       {
-        meta: 'Conexión con Ridepedia',
-        title: 'Historias que llevan de vuelta al catálogo y al comparador',
-        description: 'La editorial funciona mejor cuando orienta hacia modelos, fichas y comparaciones concretas en vez de quedarse aislada.',
+        meta: 'Tecnologia',
+        title: 'Pantallas, ayudas y ergonomia ya forman parte central del atractivo',
+        description: 'La conversacion tecnica hoy tambien pasa por confort, interfaz y uso cotidiano.',
+      },
+      {
+        meta: 'Modelos',
+        title: 'Los modelos que ganan foco terminan arrastrando interes hacia todo su segmento',
+        description: 'Cuando una moto pega fuerte, la categoria completa vuelve al centro del radar.',
       },
     ],
   },
   {
-    eyebrow: 'Criterio de portada',
-    title: 'La home presenta la conversación; esta página le da espacio para desarrollarse con más calma.',
+    eyebrow: 'Uso y cultura',
+    title: 'La moto vuelve a hablar de estilo de vida, pero sin separarse del uso diario.',
     description:
-      'Ese reparto de roles protege la jerarquía del portal y hace que noticias, catálogo y comparación se sientan complementarios en lugar de mezclados.',
+      'Ciudad, escapadas, aspiracion visual y comunidad digital conviven cada vez mas en la misma lectura del producto.',
     cards: [
       {
-        meta: 'Rol de la home',
-        title: 'Señalar lo importante con impacto visual',
-        description: 'La portada debe atraer y ordenar, no intentar contener toda la cobertura dentro del primer scroll.',
+        meta: 'Ciudad',
+        title: 'Las motos versatiles ganan peso porque responden mejor al uso mixto',
+        description: 'Comodidad, postura y practicidad influyen tanto como el motor en la decision final.',
       },
       {
-        meta: 'Rol de noticias',
-        title: 'Profundizar sin perder claridad',
-        description: 'La página editorial puede desarrollar tendencias, modelos y contexto con una lectura más amplia y mejor jerarquizada.',
+        meta: 'Cultura',
+        title: 'La presencia visual y la identidad digital empujan deseo de compra',
+        description: 'Una moto tambien se vuelve deseable por como circula en contenido, comunidad y estilo.',
       },
     ],
   },
@@ -94,7 +69,7 @@ export function NewsPage() {
   return (
     <div className="section-shell mt-6 space-y-16 pb-6 md:mt-8">
       <Reveal>
-        <section className="overflow-hidden rounded-[40px] border border-black/8 bg-[#0d1016] shadow-[0_28px_90px_rgba(15,23,42,0.18)]">
+        <section className="overflow-hidden rounded-[40px] border border-black/8 bg-[var(--ride-dark)] shadow-[0_28px_90px_rgba(15,23,42,0.18)]">
           <div className="relative">
             <img
               src={featuredStory.image}
@@ -110,20 +85,20 @@ export function NewsPage() {
                   <span className="rounded-full border border-white/12 bg-white/8 px-4 py-2 text-[0.68rem] uppercase tracking-[0.3em] text-white/78">
                     Noticias Ridepedia
                   </span>
-                  <span className="rounded-full border border-white/12 bg-white/8 px-4 py-2 text-[0.68rem] uppercase tracking-[0.24em] text-white/62">
-                    Cobertura editorial
+                  <span className="rounded-full border border-[var(--ride-brand-line)] bg-[var(--ride-brand-soft)] px-4 py-2 text-[0.68rem] uppercase tracking-[0.24em] text-[var(--ride-copy-on-dark)]">
+                    Actualidad general
                   </span>
                 </div>
 
                 <p className="mt-6 text-[0.72rem] uppercase tracking-[0.34em] text-white/44">{featuredStory.section}</p>
-                <h1 className="mt-4 max-w-[13ch] text-4xl font-semibold leading-[0.92] text-white sm:text-5xl xl:text-[4.7rem]">
+                <h1 className="mt-4 max-w-[15ch] text-3xl font-semibold leading-[0.98] text-white sm:text-[2.9rem] xl:text-[4rem]">
                   {featuredStory.title}
                 </h1>
-                <p className="mt-6 max-w-3xl text-base leading-8 text-white/72 sm:text-lg">{featuredStory.description}</p>
+                <p className="mt-5 max-w-3xl text-base leading-7 text-white/72 sm:text-lg">{featuredStory.description}</p>
 
                 <div className="mt-6 flex flex-wrap gap-2">
                   {featuredStory.tags.map((tag) => (
-                    <span key={tag} className="rounded-full border border-white/12 bg-white/8 px-4 py-2 text-[0.72rem] uppercase tracking-[0.22em] text-white/72">
+                    <span key={tag} className="rounded-full border border-white/12 bg-white/8 px-4 py-2 text-[0.72rem] uppercase tracking-[0.22em] text-[var(--ride-copy-on-dark-muted)]">
                       {tag}
                     </span>
                   ))}
@@ -132,15 +107,15 @@ export function NewsPage() {
                 <div className="mt-7 flex flex-wrap gap-3">
                   <Link
                     to={featuredStory.href}
-                    className="rounded-full bg-white px-6 py-3 text-sm font-medium text-[#090909] shadow-[0_12px_24px_rgba(255,255,255,0.12)] transition hover:-translate-y-0.5"
+                    className="rounded-full bg-[var(--ride-brand)] px-6 py-3 text-sm font-medium text-white shadow-[0_12px_24px_rgba(157,34,53,0.22)] transition hover:-translate-y-0.5 hover:bg-[var(--ride-brand-strong)]"
                   >
                     {featuredStory.cta}
                   </Link>
                   <Link
                     to="/catalog"
-                    className="rounded-full border border-white/14 bg-white/8 px-6 py-3 text-sm font-medium text-white/82 transition hover:border-white/24 hover:bg-white/12"
+                    className="rounded-full border border-white/14 bg-white/8 px-6 py-3 text-sm font-medium text-[var(--ride-copy-on-dark)] transition hover:border-[var(--ride-brand-line)] hover:bg-[var(--ride-brand-soft)]"
                   >
-                    Ir al catálogo
+                    Ir al catalogo
                   </Link>
                 </div>
               </div>
@@ -151,19 +126,19 @@ export function NewsPage() {
                     <div className="flex items-start justify-between gap-3">
                       <div>
                         <p className="text-[0.68rem] uppercase tracking-[0.28em] text-white/44">0{index + 1} · {story.section}</p>
-                        <h2 className={`mt-3 font-semibold text-white ${index === 0 ? 'text-2xl leading-[1.02]' : 'text-xl leading-[1.08]'}`}>
+                        <h2 className={`mt-3 font-semibold text-white ${index === 0 ? 'text-xl leading-[1.06]' : 'text-lg leading-[1.1]'}`}>
                           {story.title}
                         </h2>
                       </div>
                       <span className="mt-1 h-3 w-3 shrink-0 rounded-full" style={{ backgroundColor: story.accent, boxShadow: `0 0 0 6px ${story.accent}22` }} />
                     </div>
 
-                    <p className="mt-4 text-sm leading-7 text-white/70">{story.summary}</p>
+                     <p className="mt-4 text-sm leading-6 text-white/70">{story.summary}</p>
 
                     <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
-                      <span className="rounded-full border border-white/10 bg-white/6 px-3 py-2 text-[0.66rem] uppercase tracking-[0.22em] text-white/58">
-                        {story.meta}
-                      </span>
+                       <span className="rounded-full border border-white/10 bg-white/6 px-3 py-2 text-[0.66rem] uppercase tracking-[0.22em] text-[var(--ride-copy-on-dark-muted)]">
+                         {story.meta}
+                       </span>
                       <Link to={story.href} className="inline-flex text-sm font-medium text-white transition hover:text-white/78">
                         Abrir historia
                       </Link>
@@ -181,22 +156,71 @@ export function NewsPage() {
           <section className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
             <div className="lg:sticky lg:top-32">
               <p className="editorial-eyebrow text-black/45">{lane.eyebrow}</p>
-              <h2 className="mt-3 text-3xl font-semibold text-black sm:text-4xl">{lane.title}</h2>
-              <p className="mt-4 max-w-xl text-base leading-8 text-black/64">{lane.description}</p>
+               <h2 className="mt-3 text-3xl font-semibold text-black sm:text-[2.3rem] sm:leading-[1.04]">{lane.title}</h2>
+               <p className="mt-4 max-w-xl text-base leading-7 text-black/64">{lane.description}</p>
             </div>
 
             <div className="grid gap-4 md:grid-cols-2">
               {lane.cards.map((card) => (
                 <article key={card.title} className="rounded-[28px] border border-black/8 bg-white/82 p-5 shadow-[0_18px_50px_rgba(15,23,42,0.05)]">
                   <p className="text-xs uppercase tracking-[0.3em] text-black/42">{card.meta}</p>
-                  <h3 className="mt-3 text-2xl font-semibold text-black">{card.title}</h3>
-                  <p className="mt-4 text-sm leading-7 text-black/64">{card.description}</p>
+                   <h3 className="mt-3 text-[1.35rem] font-semibold leading-[1.08] text-black">{card.title}</h3>
+                   <p className="mt-4 text-sm leading-6 text-black/64">{card.description}</p>
                 </article>
               ))}
             </div>
           </section>
         </Reveal>
       ))}
+
+      <Reveal>
+        <section className="grid gap-6 xl:grid-cols-[1.02fr_0.98fr] xl:items-start">
+          <div className="rounded-[32px] border border-black/8 bg-[linear-gradient(180deg,var(--ride-paper),#f3eee7)] p-6 shadow-[0_20px_70px_rgba(15,23,42,0.07)] md:p-8">
+            <p className="editorial-eyebrow text-black/45">Radar editorial</p>
+            <h2 className="mt-3 max-w-[14ch] text-3xl font-semibold text-black sm:text-[2.4rem] sm:leading-[1.04]">
+              Radar rapido
+            </h2>
+            <p className="mt-4 max-w-2xl text-base leading-7 text-black/66">
+              Claves cortas para seguir lo que hoy mueve la conversacion del sector.
+            </p>
+
+            <div className="mt-8 grid gap-3">
+              {newsroomBriefs.map((brief) => (
+                <article key={brief.id} className="rounded-[24px] border border-black/8 bg-white/84 p-5">
+                  <p className="text-[0.68rem] uppercase tracking-[0.28em] text-[var(--ride-brand)]">{brief.label}</p>
+                  <h3 className="mt-3 text-lg font-semibold leading-6 text-black">{brief.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-black/64">{brief.summary}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid gap-4">
+            {newsroomStories.slice(3).map((story, index) => (
+              <article key={story.id} className="rounded-[28px] border border-black/8 bg-white/82 p-5 shadow-[0_16px_40px_rgba(15,23,42,0.04)]">
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <p className="text-[0.68rem] uppercase tracking-[0.28em] text-black/42">0{index + 4} · {story.section}</p>
+                    <h3 className="mt-3 text-[1.3rem] font-semibold leading-[1.08] text-black">{story.title}</h3>
+                  </div>
+                  <span className="mt-1 h-3 w-3 shrink-0 rounded-full" style={{ backgroundColor: story.accent, boxShadow: `0 0 0 6px ${story.accent}22` }} />
+                </div>
+
+                <p className="mt-4 text-sm leading-6 text-black/64">{story.summary}</p>
+
+                <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
+                  <span className="rounded-full border border-[var(--ride-line)] bg-[var(--ride-paper)] px-3 py-2 text-[0.66rem] uppercase tracking-[0.22em] text-black/56">
+                    {story.meta}
+                  </span>
+                  <Link to={story.href} className="inline-flex text-sm font-medium text-[var(--ride-brand)] transition hover:text-[var(--ride-brand-strong)]">
+                    Abrir historia
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      </Reveal>
     </div>
   )
 }
