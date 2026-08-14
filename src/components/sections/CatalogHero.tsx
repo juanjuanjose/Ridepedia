@@ -10,10 +10,10 @@ export function CatalogHero({ total }: CatalogHeroProps) {
         <div className="mt-4 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-3xl">
             <h1 className="text-4xl font-semibold text-black sm:text-5xl sm:leading-[1.02]">
-              Modelos reales para descubrir antes de comparar, guardar criterio o seguir investigando.
+              Motos reales para explorar con criterio antes de comparar, descartar o seguir profundizando.
             </h1>
             <p className="mt-4 max-w-2xl text-base leading-8 text-black/64">
-              Este catálogo es la base real del MVP: motos con identidad clara, specs legibles, imágenes consistentes y rutas directas hacia fichas que sí pueden sostener una presentación seria.
+              Encontrá naked, adventure, sport y modern classic con fichas claras, lectura editorial y acceso directo al comparador para pasar de la curiosidad a una decisión más informada.
             </p>
           </div>
 
@@ -25,9 +25,9 @@ export function CatalogHero({ total }: CatalogHeroProps) {
 
         <div className="mt-8 grid gap-3 md:grid-cols-3">
           {[
-            'Fichas con narrativa, no solo una tabla fría.',
-            'Selección visual pensada para dar buen feedback.',
-            'Base lista para conectar búsqueda, filtros y comparador.',
+            'Fichas con contexto de uso, no solo una tabla fría.',
+            'Recorrido visual consistente para comparar mejor.',
+            'Base preparada para sumar filtros, búsqueda y más cruces.',
           ].map((item) => (
             <div key={item} className="rounded-[22px] border border-black/8 bg-white/80 px-4 py-4 text-sm leading-7 text-black/66">
               {item}
@@ -36,7 +36,7 @@ export function CatalogHero({ total }: CatalogHeroProps) {
         </div>
 
         <div className="mt-6 inline-flex rounded-full border border-[#9D2235]/16 bg-[#9D2235]/8 px-4 py-2 text-[0.72rem] uppercase tracking-[0.24em] text-[#9D2235]">
-          Núcleo principal para la entrega
+          Recorrido principal del producto
         </div>
         </div>
     </section>

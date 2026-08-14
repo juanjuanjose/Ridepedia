@@ -28,7 +28,7 @@ export function NewsDigestSection() {
 
           <div className="mt-7 grid gap-3 sm:grid-cols-3">
             {newsroomBriefs.map((brief) => (
-              <div key={brief.id} className="rounded-[22px] border border-white/10 bg-white/6 p-4">
+              <div key={brief.id} className="rounded-[22px] border border-white/12 bg-white/4 p-4">
                 <p className="text-[0.66rem] uppercase tracking-[0.28em] text-white/40">{brief.label}</p>
                 <h3 className="mt-3 text-sm font-medium leading-6 text-white">{brief.title}</h3>
                 <p className="mt-2 text-sm leading-6 text-white/64">{brief.summary}</p>
@@ -54,7 +54,7 @@ export function NewsDigestSection() {
 
         <div className="grid gap-4">
           {supportingStories.map((story, index) => (
-            <article key={story.id} className="rounded-[28px] border border-black/8 bg-white/84 p-5 shadow-[0_16px_40px_rgba(15,23,42,0.05)] transition hover:-translate-y-0.5">
+            <article key={story.id} className="rounded-[28px] border border-black/10 bg-[linear-gradient(180deg,rgba(252,250,246,0.94),rgba(245,240,233,0.92))] p-5 shadow-[0_14px_34px_rgba(15,23,42,0.045)] transition hover:-translate-y-0.5">
               <div className="flex items-start justify-between gap-3">
                 <div>
                   <p className="text-[0.68rem] uppercase tracking-[0.28em] text-black/42">0{index + 2} · {story.section}</p>
@@ -66,7 +66,7 @@ export function NewsDigestSection() {
               <p className="mt-4 text-sm leading-6 text-black/66">{story.summary}</p>
 
               <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
-                <span className="rounded-full border border-[var(--ride-line)] bg-[var(--ride-paper)] px-3 py-2 text-[0.66rem] uppercase tracking-[0.22em] text-black/56">
+                <span className="rounded-full border border-black/12 bg-[#f4efe8] px-3 py-2 text-[0.66rem] uppercase tracking-[0.22em] text-black/56">
                   {story.meta}
                 </span>
                 <Link to={story.href} className="inline-flex text-sm font-medium text-[var(--ride-brand)] transition hover:text-[var(--ride-brand-strong)]">

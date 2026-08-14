@@ -17,6 +17,7 @@ export function MotorcycleImage({ motorcycle, className }: MotorcycleImageProps)
   }, [motorcycle.id])
 
   const activeCandidate = candidates[candidateIndex] || candidates[candidates.length - 1]
+  const showSourceBadge = candidates.length > 1
 
   return (
     <div className="relative overflow-hidden rounded-[28px] bg-slate-950/70">
@@ -31,9 +32,11 @@ export function MotorcycleImage({ motorcycle, className }: MotorcycleImageProps)
         }}
       />
 
-      <span className="absolute left-4 top-4 rounded-full border border-white/10 bg-slate-950/70 px-3 py-1 text-[10px] uppercase tracking-[0.35em] text-slate-300">
-        {activeCandidate.source}
-      </span>
+      {showSourceBadge ? (
+        <span className="absolute left-4 top-4 rounded-full border border-white/10 bg-slate-950/70 px-3 py-1 text-[10px] uppercase tracking-[0.35em] text-slate-300">
+          {activeCandidate.source}
+        </span>
+      ) : null}
     </div>
   )
 }

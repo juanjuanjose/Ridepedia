@@ -37,11 +37,14 @@ export function AppLayout() {
   }, [])
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-[var(--ride-cream)] text-[var(--ride-ink)]">
+    <div className="relative min-h-screen overflow-hidden bg-[linear-gradient(180deg,#f7f4ef_0%,#f1ede6_45%,#f6f2eb_100%)] text-[var(--ride-ink)]">
       <div className="page-ambient page-ambient-top" />
       <div className="page-ambient page-ambient-side" />
       <div className="page-ambient page-ambient-bottom" />
+      <div className="page-ambient page-ambient-ribbon" />
+      <div className="page-ambient page-ambient-orbit" />
       <div className="noise-overlay absolute inset-0 opacity-70" />
+      <div className="page-scrim absolute inset-x-0 top-0 h-[32rem]" />
 
       <motion.header
         initial={false}

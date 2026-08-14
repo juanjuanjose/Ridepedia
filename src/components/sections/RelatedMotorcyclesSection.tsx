@@ -44,7 +44,7 @@ export function RelatedMotorcyclesSection({ currentMotorcycle, motorcycles }: Re
 
         <div className="grid gap-4 md:grid-cols-3">
           {motorcycles.map((motorcycle) => (
-            <article key={motorcycle.id} className="overflow-hidden rounded-[28px] border border-black/8 bg-white/84 p-4 shadow-[0_16px_40px_rgba(15,23,42,0.05)] transition hover:-translate-y-1">
+            <article key={motorcycle.id} className="overflow-hidden rounded-[28px] border border-black/8 bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(251,249,245,0.94))] p-4 shadow-[0_16px_40px_rgba(15,23,42,0.05)] transition hover:-translate-y-1">
               <Link to={`/motorcycles/${motorcycle.slug}`} className="block">
                 <div className="relative overflow-hidden rounded-[22px]">
                   <MotorcycleImage motorcycle={motorcycle} className="aspect-[4/3] h-full w-full object-cover transition duration-700 hover:scale-[1.03]" />
@@ -64,6 +64,8 @@ export function RelatedMotorcyclesSection({ currentMotorcycle, motorcycles }: Re
                   </Link>
                   <p className="mt-2 text-sm text-black/64">{motorcycle.tagline}</p>
                 </div>
+
+                <p className="text-sm leading-7 text-black/62">{motorcycle.summary}</p>
 
                 <div className="flex flex-wrap gap-2">
                   {motorcycle.heroStats.slice(0, 2).map((stat) => (

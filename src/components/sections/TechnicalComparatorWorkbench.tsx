@@ -208,7 +208,7 @@ export function TechnicalComparatorWorkbench() {
               </p>
 
               <div className="mt-6 flex flex-wrap gap-2">
-                {['API técnica conectada', 'Cards reutilizables', 'Comparación clara de deltas'].map((highlight) => (
+                {['Ficha técnica local', 'Cards reutilizables', 'Comparación clara de deltas'].map((highlight) => (
                   <span key={highlight} className="rounded-full border border-[#2563EB]/16 bg-[#2563EB]/8 px-4 py-2 text-[0.72rem] uppercase tracking-[0.24em] text-[#2563EB]">
                     {highlight}
                   </span>
@@ -285,8 +285,8 @@ export function TechnicalComparatorWorkbench() {
       {isLoading ? (
         <Reveal>
           <section className="rounded-[36px] border border-black/8 bg-white/82 p-8 text-center shadow-[0_20px_70px_rgba(15,23,42,0.06)]">
-            <p className="text-xs uppercase tracking-[0.3em] text-black/42">Consultando API técnica</p>
-            <p className="mt-4 text-base leading-8 text-black/64">Cargando datos reales para comparar estas dos motos.</p>
+            <p className="text-xs uppercase tracking-[0.3em] text-black/42">Preparing technical snapshot</p>
+            <p className="mt-4 text-base leading-8 text-black/64">Loading local demo data to compare these two motorcycles.</p>
           </section>
         </Reveal>
       ) : null}
@@ -311,7 +311,7 @@ export function TechnicalComparatorWorkbench() {
                 <article key={motorcycle.slug} className="rounded-[32px] border border-black/8 bg-white/82 p-6 shadow-[0_18px_50px_rgba(15,23,42,0.06)]">
                   <div className="flex flex-wrap items-start justify-between gap-4">
                     <div>
-                      <p className="text-xs uppercase tracking-[0.3em] text-black/42">Ficha técnica remota</p>
+                      <p className="text-xs uppercase tracking-[0.3em] text-black/42">Local technical snapshot</p>
                       <h2 className="mt-3 text-3xl font-semibold text-black">{motorcycle.brand} {motorcycle.model}</h2>
                     </div>
                     <span className="rounded-full border border-black/10 bg-[var(--ride-paper)] px-4 py-2 text-[0.72rem] uppercase tracking-[0.24em] text-black/58">
