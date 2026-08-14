@@ -5,11 +5,11 @@ import { BrowserRouter, HashRouter } from 'react-router-dom'
 import { App } from './App'
 import './index.css'
 
-const Router = window.location.protocol === 'file:' ? HashRouter : BrowserRouter
+const Router = import.meta.env.PROD || window.location.protocol === 'file:' ? HashRouter : BrowserRouter
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Router>
+    <Router basename={import.meta.env.BASE_URL}>
       <App />
     </Router>
   </StrictMode>,

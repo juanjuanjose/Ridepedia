@@ -112,10 +112,10 @@ export function LearnBikeSection() {
           </div>
 
           <div className="flex flex-wrap gap-2 lg:max-w-sm lg:justify-end">
-            <span className="rounded-full border border-[#9d2235]/18 bg-white px-4 py-2 text-[0.72rem] uppercase tracking-[0.24em] text-[#9d2235]">
+            <span className="rounded-full border border-[#9d2235]/18 bg-[#f6f1eb] px-4 py-2 text-[0.72rem] uppercase tracking-[0.24em] text-[#9d2235]">
               Punto estratégico
             </span>
-            <span className="rounded-full border border-black/10 bg-white/80 px-4 py-2 text-[0.72rem] uppercase tracking-[0.24em] text-black/58">
+            <span className="rounded-full border border-black/12 bg-[#f1ece5] px-4 py-2 text-[0.72rem] uppercase tracking-[0.24em] text-black/58">
               Refuerza el futuro comparador
             </span>
           </div>
@@ -170,7 +170,7 @@ export function LearnBikeSection() {
                 </p>
               </div>
 
-          <aside className="rounded-[36px] border border-black/10 bg-[linear-gradient(180deg,rgba(255,255,255,1),rgba(247,243,237,0.98))] p-6 shadow-[0_30px_90px_rgba(15,23,42,0.12)] ring-1 ring-black/5 md:p-8 xl:p-9">
+          <aside className="rounded-[36px] border border-black/12 bg-[linear-gradient(180deg,rgba(249,245,239,0.98),rgba(241,235,227,0.96))] p-6 shadow-[0_24px_64px_rgba(15,23,42,0.08)] md:p-8 xl:p-9">
             <p className="editorial-eyebrow text-black/45">Tipo de moto</p>
 
             <div className="mt-5 flex flex-wrap gap-2">
@@ -182,7 +182,7 @@ export function LearnBikeSection() {
                     key={category.slug}
                     type="button"
                     onClick={() => setSelectedSlug(category.slug)}
-                    className={`rounded-full border px-4 py-2 text-sm transition ${isSelected ? 'text-white shadow-[0_18px_35px_rgba(15,23,42,0.16)]' : 'border-black/10 bg-white/80 text-black/68 hover:border-black/20 hover:text-black'}`}
+                    className={`rounded-full border px-4 py-2 text-sm transition ${isSelected ? 'text-white shadow-[0_18px_35px_rgba(15,23,42,0.16)]' : 'border-black/12 bg-[#f3eee8] text-black/68 hover:border-black/22 hover:text-black'}`}
                     style={
                       isSelected
                         ? {
@@ -199,26 +199,26 @@ export function LearnBikeSection() {
             </div>
 
             <h3 className="mt-6 text-4xl font-semibold text-black xl:text-[4rem] xl:leading-[0.96]">{selectedCategory.label}</h3>
-            <p className="mt-5 rounded-[24px] border border-black/8 bg-white/82 px-5 py-5 text-base leading-8 text-black/72">
+            <p className="mt-5 rounded-[24px] border border-black/10 bg-[#f5f0e9] px-5 py-5 text-base leading-8 text-black/72">
               {selectedCategory.description}
             </p>
 
-            <div className="mt-4 rounded-[24px] border border-black/8 bg-white/88 p-5">
+            <div className="mt-4 rounded-[24px] border border-black/10 bg-[#f5efe8] p-5">
               <p className="text-xs uppercase tracking-[0.3em] text-black/42">Rasgos clave</p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {selectedCategory.keyTraits.map((trait) => (
-                  <span key={trait} className="rounded-full border border-black/10 px-4 py-2.5 text-sm text-black/76">
+                  <span key={trait} className="rounded-full border border-black/12 bg-[#efe8e0] px-4 py-2.5 text-sm text-black/76">
                     {trait}
                   </span>
                 ))}
               </div>
             </div>
 
-            <div className="mt-4 rounded-[24px] border border-black/8 bg-white/88 p-5">
+            <div className="mt-4 rounded-[24px] border border-black/10 bg-[#f5efe8] p-5">
               <p className="text-xs uppercase tracking-[0.3em] text-black/42">Fortalezas</p>
               <div className="mt-4 grid gap-3">
                 {selectedCategory.strengths.map((strength) => (
-                  <div key={strength} className="rounded-[18px] border border-black/8 bg-[#f8f4ef] px-4 py-3 text-sm text-black/72">
+                  <div key={strength} className="rounded-[18px] border border-black/10 bg-[#eee7df] px-4 py-3 text-sm text-black/72">
                     {strength}
                   </div>
                 ))}

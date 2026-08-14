@@ -45,10 +45,15 @@ export function SpecsSection({ motorcycle }: SpecsSectionProps) {
           </div>
 
           <div className="rounded-[30px] border border-black/8 bg-[linear-gradient(180deg,#111827,#020617)] p-6 shadow-[0_24px_80px_rgba(15,23,42,0.18)]">
-            <p className="text-xs uppercase tracking-[0.3em] text-white/42">Lectura rápida</p>
-            <p className="mt-3 max-w-3xl text-base leading-8 text-white/70">
-              Esta ficha junta imagen, contexto y datos para que puedas decidir rápido si vale la pena seguir con esta moto o compararla con otra de la misma categoría.
-            </p>
+            <div className="grid gap-4 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
+              <div>
+                <p className="text-xs uppercase tracking-[0.3em] text-white/42">Lectura rápida</p>
+                <h3 className="mt-3 text-2xl font-semibold text-white">Qué deberías comparar a continuación</h3>
+              </div>
+              <p className="max-w-3xl text-base leading-8 text-white/70">
+                Con esta base ya podés decidir si te conviene seguir por potencia, peso, postura o equipamiento, y ahí sí enfrentarla con otra moto de su categoría o con una alternativa de uso parecido.
+              </p>
+            </div>
           </div>
         </div>
       </section>

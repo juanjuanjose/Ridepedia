@@ -10,7 +10,7 @@ export function HeroSection() {
         initial={{ opacity: 0, scale: 0.985, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-        className="mx-auto overflow-hidden rounded-[38px] border border-black/8 bg-[var(--ride-dark)] shadow-[0_28px_90px_rgba(15,23,42,0.18)]"
+        className="mx-auto overflow-hidden rounded-[38px] border-2 border-black/10 bg-[var(--ride-dark)] shadow-[0_28px_90px_rgba(15,23,42,0.18)]"
       >
         <div className="relative">
           <img
@@ -22,7 +22,7 @@ export function HeroSection() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_16%_18%,rgba(157,34,53,0.22),transparent_24%),radial-gradient(circle_at_85%_24%,rgba(255,255,255,0.08),transparent_18%),radial-gradient(circle_at_78%_78%,rgba(37,99,235,0.14),transparent_22%)]" />
 
           <div className="relative z-10 grid min-h-[34rem] gap-5 p-5 sm:p-6 lg:grid-cols-[1.18fr_0.82fr] lg:p-7 xl:min-h-[40rem] xl:p-8">
-            <div className="flex flex-col justify-between gap-8 rounded-[32px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.02))] p-6 backdrop-blur-md sm:p-7 xl:p-8">
+            <div className="flex flex-col justify-between gap-8 rounded-[32px] border border-white/14 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.02))] p-6 backdrop-blur-md sm:p-7 xl:p-8">
               <div className="max-w-4xl">
                 <div className="flex flex-wrap items-center gap-3">
                   <span className="rounded-full border border-white/12 bg-white/8 px-4 py-2 text-[0.68rem] uppercase tracking-[0.3em] text-white/78">
@@ -72,7 +72,7 @@ export function HeroSection() {
                     { label: 'Radar', value: 'Tendencias' },
                     { label: 'Seguir', value: 'Modelos clave' },
                   ].map((item) => (
-                     <div key={item.label} className="rounded-[22px] border border-white/10 bg-white/6 p-4">
+                      <div key={item.label} className="rounded-[22px] border border-white/16 bg-white/6 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]">
                        <p className="text-[0.68rem] uppercase tracking-[0.28em] text-white/42">{item.label}</p>
                        <p className="mt-2 text-sm font-medium leading-6 text-[var(--ride-copy-on-dark)]">{item.value}</p>
                      </div>
@@ -85,7 +85,7 @@ export function HeroSection() {
               {editorialHeroStories.map((card, index) => (
                 <article
                   key={card.id}
-                  className={`rounded-[28px] border border-white/10 p-5 shadow-[0_20px_60px_rgba(0,0,0,0.18)] backdrop-blur-md ${index === 0 ? 'bg-[linear-gradient(180deg,rgba(255,255,255,0.1),rgba(255,255,255,0.05))]' : 'bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.03))]'}`}
+                  className={`rounded-[28px] border-2 border-white/18 p-5 shadow-[0_20px_60px_rgba(0,0,0,0.18)] backdrop-blur-md ${index === 0 ? 'bg-[linear-gradient(180deg,rgba(255,255,255,0.12),rgba(255,255,255,0.06))]' : 'bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.04))]'}`}
                 >
                   <div className="flex items-start justify-between gap-3">
                     <div>
@@ -103,7 +103,7 @@ export function HeroSection() {
                   <p className="mt-4 text-sm leading-7 text-white/70">{card.summary}</p>
 
                   <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
-                    <span className="rounded-full border border-white/10 bg-white/6 px-3 py-2 text-[0.66rem] uppercase tracking-[0.22em] text-[var(--ride-copy-on-dark-muted)]">
+                    <span className="rounded-full border border-white/16 bg-white/6 px-3 py-2 text-[0.66rem] uppercase tracking-[0.22em] text-[var(--ride-copy-on-dark-muted)]">
                       {card.meta}
                     </span>
                     <Link to={card.href} className="inline-flex text-sm font-medium text-white transition hover:text-white/78">

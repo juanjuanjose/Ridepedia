@@ -152,7 +152,7 @@ export function CategoryFocusSection({ motorcycle }: CategoryFocusSectionProps) 
           </div>
         </div>
 
-        <div className="grid gap-4 md:grid-cols-3 xl:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {focus.pillars.map((pillar) => (
             <article key={pillar.title} className="rounded-[28px] border border-black/8 bg-white/84 p-5 shadow-[0_18px_50px_rgba(15,23,42,0.05)]">
               <p className="text-xs uppercase tracking-[0.3em] text-[var(--ride-brand)]">{pillar.label}</p>
@@ -161,11 +161,14 @@ export function CategoryFocusSection({ motorcycle }: CategoryFocusSectionProps) 
             </article>
           ))}
 
-          <article className="rounded-[28px] border border-black/8 bg-[linear-gradient(180deg,var(--ride-dark-2),#020617)] p-5 shadow-[0_20px_60px_rgba(15,23,42,0.18)] md:col-span-3">
-            <div className="grid gap-4 lg:grid-cols-[0.7fr_1.3fr] lg:items-start">
+          <article className="rounded-[28px] border border-black/8 bg-[linear-gradient(180deg,var(--ride-dark-2),#020617)] p-5 shadow-[0_20px_60px_rgba(15,23,42,0.18)] md:col-span-2 xl:col-span-3">
+            <div className="grid gap-4 lg:grid-cols-[0.86fr_1.14fr] lg:items-start">
               <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-white/42">En esta ficha</p>
+                <p className="text-xs uppercase tracking-[0.3em] text-white/42">Lo que define esta moto</p>
                 <h3 className="mt-3 text-2xl font-semibold text-white">{motorcycle.brand} {motorcycle.model}</h3>
+                <p className="mt-3 text-sm leading-7 text-white/66">
+                  Esta lectura resume el enfoque de la moto antes de entrar al detalle fino de specs y comparaciones directas.
+                </p>
               </div>
               <div className="grid gap-3 sm:grid-cols-3">
                 {motorcycle.heroStats.map((stat) => (

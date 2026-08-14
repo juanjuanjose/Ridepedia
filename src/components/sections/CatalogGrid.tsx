@@ -10,7 +10,7 @@ interface CatalogGridProps {
 export function CatalogGrid({ motorcycles }: CatalogGridProps) {
   return (
     <section className="section-shell mt-10">
-      <div className="mb-6 flex flex-col gap-4 rounded-[30px] border border-black/8 bg-white/74 px-5 py-5 shadow-[0_18px_48px_rgba(15,23,42,0.05)] lg:flex-row lg:items-center lg:justify-between">
+      <div className="mb-6 flex flex-col gap-4 rounded-[30px] border-2 border-black/12 bg-white/78 px-5 py-5 shadow-[0_18px_48px_rgba(15,23,42,0.06)] lg:flex-row lg:items-center lg:justify-between">
         <div className="max-w-2xl">
           <p className="text-xs uppercase tracking-[0.3em] text-black/42">Catálogo actual</p>
           <p className="mt-2 text-sm leading-7 text-black/64">
@@ -19,7 +19,7 @@ export function CatalogGrid({ motorcycles }: CatalogGridProps) {
         </div>
         <div className="flex flex-wrap gap-2">
           {['20 motos', '4 categorías', 'Comparador activo'].map((item) => (
-            <span key={item} className="rounded-full border border-black/10 bg-[var(--ride-paper)] px-3 py-2 text-[0.68rem] uppercase tracking-[0.22em] text-black/58">
+            <span key={item} className="rounded-full border border-black/14 bg-[var(--ride-paper)] px-3 py-2 text-[0.68rem] uppercase tracking-[0.22em] text-black/58">
               {item}
             </span>
           ))}
@@ -30,7 +30,7 @@ export function CatalogGrid({ motorcycles }: CatalogGridProps) {
       {motorcycles.map((motorcycle) => (
         <article
           key={motorcycle.id}
-          className="group overflow-hidden rounded-[30px] border border-black/8 bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(251,249,245,0.94))] p-4 shadow-[0_22px_60px_rgba(15,23,42,0.08)] transition hover:-translate-y-1"
+          className="group overflow-hidden rounded-[30px] border-2 border-black/12 bg-[linear-gradient(180deg,rgba(255,255,255,0.97),rgba(251,249,245,0.95))] p-4 shadow-[0_22px_60px_rgba(15,23,42,0.09)] transition hover:-translate-y-1"
         >
           <div className="relative overflow-hidden rounded-[24px]">
             <Link to={`/motorcycles/${motorcycle.slug}`}>
@@ -55,14 +55,14 @@ export function CatalogGrid({ motorcycles }: CatalogGridProps) {
                 </Link>
                 <p className="mt-1 text-sm text-black/64">{motorcycle.tagline}</p>
               </div>
-              <span className="rounded-full border border-black/10 bg-[var(--ride-paper)] px-3 py-1 text-xs text-black/62">Ficha real</span>
+                <span className="rounded-full border border-black/14 bg-[var(--ride-paper)] px-3 py-1 text-xs text-black/62">Ficha real</span>
             </div>
 
             <p className="text-sm leading-7 text-black/64">{motorcycle.summary}</p>
 
             <div className="flex flex-wrap gap-2">
               {motorcycle.heroStats.map((stat) => (
-                <span key={stat} className="rounded-full border border-black/10 bg-white px-3 py-1 text-xs text-black/62">
+                <span key={stat} className="rounded-full border border-black/14 bg-white px-3 py-1 text-xs text-black/62">
                   {stat}
                 </span>
               ))}
@@ -74,7 +74,7 @@ export function CatalogGrid({ motorcycles }: CatalogGridProps) {
               </Link>
               <Link
                 to={`/technical-comparator?left=${motorcycle.slug}`}
-                className="inline-flex items-center rounded-full border border-[var(--ride-tech-line)] bg-[var(--ride-tech-soft)] px-4 py-2 text-xs font-medium uppercase tracking-[0.22em] text-[var(--ride-tech)] transition hover:border-[var(--ride-tech)]/40"
+                className="inline-flex items-center rounded-full border-2 border-[var(--ride-tech-line)] bg-[var(--ride-tech-soft)] px-4 py-2 text-xs font-medium uppercase tracking-[0.22em] text-[var(--ride-tech)] transition hover:border-[var(--ride-tech)]/40"
               >
                 Comparar
               </Link>
